@@ -3,17 +3,28 @@ import styled from 'styled-components'
 const Container = styled.View `
   height: 44px;
   backgroundColor: #0397FF;
-  color: #fff;
-  
+  display: flex;
+  flexDirection: row;
+  justifyContent: space-between;
+  alignItems: center;
 `
 
-const subTitle = styled.Text `
-  height: 44px;
-  backgroundColor: #0397FF;
+const MainTitle = styled.Text `
   color: #fff;
+`
+
+const SubTitle = styled.Text `
+  color: #fff;
+`
+
+const ImageIcon = styled.Image `
+  width: 24px;
+  height: 24px;
 `
 
 export {
   Container,
-  SubTitle
+  SubTitle,
+  ImageIcon,
+  MainTitle
 }
