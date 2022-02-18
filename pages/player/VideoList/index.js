@@ -3,14 +3,23 @@ import React, { Component } from 'react';
 
 import NavBar from '../../../components/NavBar'
 
-import { Container } from './StyledIndex';
-
+import { Container, ToolsCon, ImageItem, MeiuPic, MeiuPicCon, MeiuPicTitle, PicImage } from './StyledIndex';
 export default class VideoList extends Component {
   render() {
     return (
       <Container>
-        <NavBar title="浏览器" subTitle="编辑" isShowBack={true} />
-        <Text>123457398748573489758934758347589734895785348758743897589347589374857348957893475839475834975839475834787531</Text>
+        <NavBar title="播放器" subTitle="编辑" isShowBack={true} />
+        <ToolsCon>
+          <ImageItem source={require('../../../assets/images/ITunes.png')}></ImageItem>
+          <ImageItem source={require('../../../assets/images/wifi.png')}></ImageItem>
+        </ToolsCon>
+
+        <MeiuPicCon>
+          <MeiuPicTitle>
+            <PicImage source={require('../../../assets/images/photo.png')} />
+            <Text>系统相册</Text>
+          </MeiuPicTitle>
+        </MeiuPicCon>
       </Container>
     );
   }

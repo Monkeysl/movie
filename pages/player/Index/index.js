@@ -19,7 +19,7 @@ export default class Index extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedTab: 'redTab',
+      selectedTab: 'setting',
       isReady: false
     }
   }
@@ -68,24 +68,24 @@ export default class Index extends Component {
             title="视频列表"
             icon={<ImageIcon source={require('../../../assets/images/video.png')} />}
             selectedIcon={<ImageIcon source={require('../../../assets/images/videoa.png')} />}
-            selected={this.state.selectedTab === 'blueTab'}
-            onPress={() => this.onChangeTab('blueTab')}>
+            selected={this.state.selectedTab === 'videoList'}
+            onPress={() => this.onChangeTab('videoList')}>
             <VideoList />
           </TabBar.Item>
           <TabBar.Item
             icon={<ImageIcon source={require('../../../assets/images/browser.png')} />}
             selectedIcon={<ImageIcon source={require('../../../assets/images/browsera.png')} />}
             title="浏览器"
-            selected={this.state.selectedTab === 'redTab'}
-            onPress={() => this.onChangeTab('redTab')}>
+            selected={this.state.selectedTab === 'browser'}
+            onPress={() => this.onChangeTab('browser')}>
             <Browser />
           </TabBar.Item>
           <TabBar.Item
             icon={<ImageIcon source={require('../../../assets/images/setting.png')} />}
             selectedIcon={<ImageIcon source={require('../../../assets/images/settinga.png')} />}
             title="设置"
-            selected={this.state.selectedTab === 'greenTab'}
-            onPress={() => this.onChangeTab('greenTab')}>
+            selected={this.state.selectedTab === 'setting'}
+            onPress={() => this.onChangeTab('setting')}>
             <Setting />
           </TabBar.Item>
         </TabBar>
