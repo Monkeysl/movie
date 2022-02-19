@@ -34,9 +34,9 @@ const MeiuPicTitle = styled.View`
 `
 
 const PicImage = styled.Image `
-  width: 30px;
-  height: 30px;
-  marginRight: 10px;
+  width: 30;
+  height: 30;
+  marginRight: 10;
 `
 
 export {

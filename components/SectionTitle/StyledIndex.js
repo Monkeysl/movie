@@ -15,11 +15,14 @@ const SectionTitleCon = styled.View `
 const LeftCon = styled.View `
   flexDirection: row;
   alignItems: center;
+  fontSize: 14px;
 `
 
 const RightCon = styled.View `
+  flexDirection: row;
   justifyContent: flex-end;
   alignItems: center;
+  fontSize: 14px;
 `
 
 const RightText = styled.Text `
@@ -40,6 +43,7 @@ export {
   SectionTitleCon,
   LeftCon,
   RightCon,
+  RightText,
   SubTitle,
   ImageIcon,
 }

@@ -3,15 +3,9 @@ import React, { Component } from 'react'
 
 import { Container, SectionTitleCon, LeftCon, RightCon, RightText, SubTitle, ImageIcon,  } from './StyledIndex';
 
-export default class SectionTitle extends Component {
-  constructor(props) {
-    super(props)
-  }
+export default SectionTitle =  (props) => {
 
-
-  render() {
-    const { title, rightText, isShowBack, justify, backUrl } = this.props
-    const subTitleCon = () => <SubTitle>{subTitle}</SubTitle>
+    const { title, rightText, rightTextStyle, isShowBack = true, justify, backUrl } = props
 
     return (
       <Container justify={justify}>
@@ -20,11 +14,10 @@ export default class SectionTitle extends Component {
             <Text>{title}</Text>
           </LeftCon>
           <RightCon>
-            <RightText>{rightText}</RightText>
-            <ImageIcon source={require('../../assets/images/next.png')} />
+            <RightText style={rightTextStyle}>{rightText}</RightText>
+            { isShowBack && <ImageIcon source={require('../../assets/images/next.png')} /> }
           </RightCon>
         </SectionTitleCon>
       </Container>
     )
-  }
 }

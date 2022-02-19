@@ -8,8 +8,8 @@ const Container = styled.View `
 `
 
 const ImageIcon = styled.Image `
-  width: 22px;
-  height: 22px;
+  width: 22;
+  height: 22;
 `
 
 export {
