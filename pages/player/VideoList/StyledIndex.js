@@ -4,7 +4,7 @@ const Container = styled.View `
   height: 100%;
   flex: 1;
   flexDirection: column;
-  backgroundColor: #e3e3e3
+  backgroundColor: #e3e3e3;
 `
 
 const ToolsCon = styled.View `
@@ -34,9 +34,9 @@ const MeiuPicTitle = styled.View`
 `
 
 const PicImage = styled.Image `
-  width: 30;
-  height: 30;
-  marginRight: 10;
+  width: 30px;
+  height: 30px;
+  marginRight: 10px;
 `
 
 export {

@@ -10,14 +10,14 @@ const SearchMovieCon = styled.View `
   flex: 1;
   flexDirection: column;
   alignItems: center;
-  padding: 0 47;
+  padding: 0 47px;
   backgroundColor: #fff;
 `
 
 const MovieImage = styled.Image `
-  width: 112;
-  height: 85;
-  marginTop: 60;
+  width: 112px;
+  height: 85px;
+  marginTop: 60px;
   justifyContent: center;
 `
 
@@ -25,12 +25,12 @@ const SearchCon = styled.View`
   flexDirection: row;
   justifyContent: space-between;
   alignItems: center;
-  marginTop: 28;
+  marginTop: 28px;
   width: 100%;
-  height: 50;
-  padding: 13 21;
-  border: solid 1 #0397ff;
-  borderRadius: 8;
+  height: 50px;
+  padding: 13px 21px;
+  border: solid 1px #0397ff;
+  borderRadius: 8px;
 `
 
 const SearchInput = styled.TextInput`
@@ -40,9 +40,9 @@ const SearchInput = styled.TextInput`
 `
 
 const SearchIcon = styled.Image`
-  width: 24;
-  height: 24;
-  marginLeft: 40;
+  width: 24px;
+  height: 24px;
+  marginLeft: 40px;
 `
 
 

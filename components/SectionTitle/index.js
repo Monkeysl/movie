@@ -1,7 +1,13 @@
-import { Text, View } from 'react-native'
+import { Text, View, StyleSheet } from 'react-native'
 import React, { Component } from 'react'
 
-import { Container, SectionTitleCon, LeftCon, RightCon, RightText, SubTitle, ImageIcon,  } from './StyledIndex';
+import { Container, SectionTitleCon, LeftCon, RightCon, SubTitle, ImageIcon,  } from './StyledIndex';
+
+const styles = StyleSheet.create({
+  red: {
+    // color: 'red',
+  }
+})
 
 export default SectionTitle =  (props) => {
 
@@ -11,10 +17,10 @@ export default SectionTitle =  (props) => {
       <Container justify={justify}>
         <SectionTitleCon>
           <LeftCon>
-            <Text>{title}</Text>
+            <Text style={styles.red}>{title}</Text>
           </LeftCon>
           <RightCon>
-            <RightText style={rightTextStyle}>{rightText}</RightText>
+            <Text style={rightTextStyle}>{rightText}</Text>
             { isShowBack && <ImageIcon source={require('../../assets/images/next.png')} /> }
           </RightCon>
         </SectionTitleCon>

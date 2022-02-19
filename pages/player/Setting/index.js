@@ -5,13 +5,6 @@ import { NavBar, SectionTitle } from '../../../components'
 
 import { Container, SettingCon } from './StyledIndex.js'
 
-
-const styles = StyleSheet.create({
-  rightTextStyle: {
-    fontSize: 12,
-    color: '#707070'
-  }
-})
 export default class Setting extends Component {
   render() {
     return (
@@ -27,3 +20,10 @@ export default class Setting extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  rightTextStyle: {
+    fontSize: 12,
+    color: '#707070'
+  }
+})
