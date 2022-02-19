@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 import React, { Component } from 'react';
 
-import NavBar from '../../../components/NavBar'
+import { NavBar } from '../../../components'
 
 import { Container, ToolsCon, ImageItem, MeiuPic, MeiuPicCon, MeiuPicTitle, PicImage } from './StyledIndex';
 export default class VideoList extends Component {

@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 import React, { Component } from 'react';
 
-import NavBar from '../../../components/NavBar'
+import { NavBar } from '../../../components'
 
 import { Container, SearchMovieCon, MovieImage, SearchCon, SearchInput, SearchIcon } from './StyledIndex'
 

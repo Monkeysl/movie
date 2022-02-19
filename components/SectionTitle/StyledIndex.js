@@ -1,17 +1,29 @@
 import styled from 'styled-components'
 
 const Container = styled.View `
-  height: 44px;
-  backgroundColor: #0397FF;
-  display: flex;
-  flexDirection: row;
-  justifyContent: ${props => props.justify || "space-between"};
-  alignItems: center;
-  padding: 0 15px;
+  height: 50px;
+  padding: 18px 16px 16px;
+  borderBottomColor: #eee;
+  borderBottomWidth: 1;
 `
 
-const MainTitle = styled.Text `
-  color: #fff;
+const SectionTitleCon = styled.View `
+  flexDirection: row;
+  justifyContent: ${props => props.justify || "space-between"};
+`
+
+const LeftCon = styled.View `
+  flexDirection: row;
+  alignItems: center;
+`
+
+const RightCon = styled.View `
+  justifyContent: flex-end;
+  alignItems: center;
+`
+
+const RightText = styled.Text `
+  
 `
 
 const SubTitle = styled.Text `
@@ -19,13 +31,15 @@ const SubTitle = styled.Text `
 `
 
 const ImageIcon = styled.Image `
-  width: 24px;
-  height: 24px;
+  width: 9px;
+  height: 15px;
 `
 
 export {
   Container,
+  SectionTitleCon,
+  LeftCon,
+  RightCon,
   SubTitle,
   ImageIcon,
-  MainTitle
 }
