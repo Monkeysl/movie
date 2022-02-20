@@ -4,6 +4,10 @@ import { Icon, SearchBar, TabBar } from '@ant-design/react-native'
 import * as Font from 'expo-font'
 import { AppLoading } from 'expo' 
 
+import { observer, inject } from 'mobx-react'
+
+import { Provider } from '../../../context/router'
+
 // 首页组件
 import VideoList from '../VideoList'
 import Browser from '../Browser'
@@ -15,16 +19,18 @@ import {
   ImageIcon
 } from './StyledIndex'
 
+@observer
 export default class Index extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedTab: 'setting',
+      selectedTab: 'videoList',
       isReady: false
     }
   }
 
   async componentDidMount() {
+    console.log(this.props.navigation)
     await Font.loadAsync(
       'antoutline',
       require('@ant-design/icons-react-native/fonts/antoutline.ttf')
@@ -40,15 +46,6 @@ export default class Index extends Component {
     })
   }
 
-  renderContent(pageText) {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'white' }}>
-        <SearchBar placeholder="Search" showCancelButton />
-        <Text style={{ margin: 50 }}>{pageText}</Text>
-      </View>
-    )
-  }
-
   onChangeTab(tabName) {
     this.setState({
       selectedTab: tabName,
@@ -59,7 +56,7 @@ export default class Index extends Component {
     // const { isReady } = this.state
     // if (!isReady) return <AppLoading />
     return (
-      <Container>
+      <Provider value={this.props.navigation}>
         <TabBar
           unselectedTintColor="#000"
           tintColor="#0397FF"
@@ -89,7 +86,7 @@ export default class Index extends Component {
             <Setting />
           </TabBar.Item>
         </TabBar>
-      </Container>
+      </Provider>
     );
   }
 }

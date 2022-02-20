@@ -3,8 +3,8 @@ import styled from 'styled-components'
 const Container = styled.View `
   height: 50px;
   padding: 18px 16px 16px;
+  borderBottomWidth: 1px;
   borderBottomColor: #eee;
-  borderBottomWidth: 1;
 `
 
 const SectionTitleCon = styled.View `
