@@ -27,9 +27,10 @@ export default class VideoList extends Component {
     return (
       <Container>
         <NavBar title="播放器" subTitle="编辑" isShowBack={true} />
-        <ToolsCon>
+        <ToolsCon onPress={this._onPress}>
           <ImageItem
             source={require('../../../assets/images/ITunes.png')}
+            
           />
           <ImageItem source={require('../../../assets/images/wifi.png')}></ImageItem>
         </ToolsCon>

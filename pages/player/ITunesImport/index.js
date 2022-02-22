@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native'
 import React, { Component } from 'react'
 
-import { NavBar, SectionTitle } from '../../../components'
+import { NavBar } from '../../../components'
 
 import {
   Container,

@@ -26,15 +26,10 @@ export default function App() {
       />
       <Provider store={store}>
         <Stack.Navigator initialRouteName="PlayerIndex">
-          <Stack.Screen
-            name="PlayerIndex"
-            component={PlayerIndex}
-            options={{ headerShown: false }}
-          >
-          </Stack.Screen>
-          <Stack.Screen name="ITunesImport" component={ITunesImport} ></Stack.Screen>
-          <Stack.Screen name="SystemPhoto" component={SystemPhoto} ></Stack.Screen>
-          <Stack.Screen name="WIFITransfer" component={WIFITransfer} ></Stack.Screen>
+          <Stack.Screen name="ITunesImport" component={ITunesImport} options={{ headerShown: false }}></Stack.Screen>
+          <Stack.Screen name="PlayerIndex" component={PlayerIndex} options={{ headerShown: false }}></Stack.Screen>
+          <Stack.Screen name="SystemPhoto" component={SystemPhoto} options={{ headerShown: false }}></Stack.Screen>
+          <Stack.Screen name="WIFITransfer" component={WIFITransfer} options={{ headerShown: false }}></Stack.Screen>
         </Stack.Navigator>
       </Provider>
     </NavigationContainer>
