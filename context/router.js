@@ -1,6 +1,6 @@
 import { createContext } from 'react'
 
-const RouteContext = createContext(null)
+const RouteContext = createContext({})
 
 const { Provider, Consumer } = RouteContext
 

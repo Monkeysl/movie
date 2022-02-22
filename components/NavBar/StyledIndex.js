@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 const Container = styled.View `
-  marginTop: -20px;
-  height: 64px;
+  marginTop: ${props => -props.navBarTop + 'px'}
+  height: ${props => props.navBarTop + 44 + 'px'};
   backgroundColor: #0397FF;
   display: flex;
   flexDirection: row;
   justifyContent: ${props => props.justify || "space-between"};
   alignItems: center;
-  padding: 20px 15px 0;
+  padding: ${props => props.navBarTop + 'px ' + '20px' + ' ' + 0};
 `
 
 const MainTitle = styled.Text `

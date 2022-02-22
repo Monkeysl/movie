@@ -20,30 +20,19 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar
-        backgroundColor="#0397FF"
+        backgroundColor="transparent"
         barStyle="light-content"
-        translucent={false}
-        hidden={false}
+        translucent={true}
       />
       <Provider store={store}>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="PlayerIndex">
           <Stack.Screen
             name="PlayerIndex"
             component={PlayerIndex}
-            options={{
-              title: 'My home',
-              headerStyle: {
-                backgroundColor: '#0397ff',
-                height: 0
-              },
-              headerTintColor: '#fff',
-              headerTitleStyle: {
-                fontWeight: 'bold',
-              },
-            }}
+            options={{ headerShown: false }}
           >
           </Stack.Screen>
-          <Stack.Screen name="iTunesImport" component={ITunesImport} ></Stack.Screen>
+          <Stack.Screen name="ITunesImport" component={ITunesImport} ></Stack.Screen>
           <Stack.Screen name="SystemPhoto" component={SystemPhoto} ></Stack.Screen>
           <Stack.Screen name="WIFITransfer" component={WIFITransfer} ></Stack.Screen>
         </Stack.Navigator>

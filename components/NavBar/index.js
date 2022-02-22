@@ -1,5 +1,8 @@
 import { Text, View } from 'react-native'
 import React, { Component } from 'react'
+import { 
+  SafeAreaInsetsContext
+} from 'react-native-safe-area-context';
 
 import { Container, SubTitle, ImageIcon, MainTitle } from './StyledIndex';
 
@@ -14,11 +17,15 @@ export default class navBar extends Component {
     const subTitleCon = () => <SubTitle>{subTitle}</SubTitle>
 
     return (
-      <Container justify={justify}>
-        {!!isShowBack&&<ImageIcon source={require('../../assets/images/back.png')} />}
-        <MainTitle>{title}</MainTitle>
-        {!!subTitle&&subTitleCon()}
-      </Container>
+      <SafeAreaInsetsContext.Consumer>
+        {(insets) => 
+          <Container justify={justify} navBarTop={insets.top}>
+            {!!isShowBack&&<ImageIcon source={require('../../assets/images/back.png')} />}
+            <MainTitle>{title}</MainTitle>
+            {!!subTitle&&subTitleCon()}
+          </Container> 
+        }
+      </SafeAreaInsetsContext.Consumer>
     )
   }
 }

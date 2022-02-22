@@ -13,10 +13,14 @@ export default class VideoList extends Component {
     this._onPress = this._onPress.bind(this)
   }
 
-  static contextType =RouterContext
+  static contextType = RouterContext
 
   _onPress() {
     this.context.navigation.navigate('ITunesImport')
+  }
+
+  componentDidMount() {
+
   }
 
   render() {
@@ -26,7 +30,6 @@ export default class VideoList extends Component {
         <ToolsCon>
           <ImageItem
             source={require('../../../assets/images/ITunes.png')}
-            onPress={this._onPress}
           />
           <ImageItem source={require('../../../assets/images/wifi.png')}></ImageItem>
         </ToolsCon>
@@ -34,7 +37,7 @@ export default class VideoList extends Component {
         <MeiuPicCon>
           <MeiuPicTitle>
             <PicImage source={require('../../../assets/images/photo.png')} />
-            <Text>系统相册</Text>
+            <Text onPress={this._onPress}>系统相册</Text>
           </MeiuPicTitle>
         </MeiuPicCon>
       </Container>

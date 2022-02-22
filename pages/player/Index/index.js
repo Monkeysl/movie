@@ -27,10 +27,10 @@ export default class Index extends Component {
       selectedTab: 'videoList',
       isReady: false
     }
+    this.navigation = this.props.navigation
   }
 
   async componentDidMount() {
-    console.log(this.props.navigation)
     await Font.loadAsync(
       'antoutline',
       require('@ant-design/icons-react-native/fonts/antoutline.ttf')
@@ -56,7 +56,7 @@ export default class Index extends Component {
     // const { isReady } = this.state
     // if (!isReady) return <AppLoading />
     return (
-      <Provider value={this.props.navigation}>
+      <Provider value={{navigation: this.navigation}}>
         <TabBar
           unselectedTintColor="#000"
           tintColor="#0397FF"
