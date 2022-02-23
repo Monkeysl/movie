@@ -1,6 +1,7 @@
 // import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, StatusBar, Text, View } from 'react-native'
 import { Provider } from 'mobx-react'
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -18,21 +19,24 @@ const Stack = createStackNavigator ()
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <StatusBar
-        backgroundColor="transparent"
-        barStyle="light-content"
-        translucent={true}
-      />
-      <Provider store={store}>
-        <Stack.Navigator initialRouteName="PlayerIndex">
-          <Stack.Screen name="PlayerIndex" component={PlayerIndex} options={{ headerShown: false }}></Stack.Screen>
-          <Stack.Screen name="WIFITransfer" component={WIFITransfer} options={{ headerShown: false }}></Stack.Screen>
-          <Stack.Screen name="ITunesImport" component={ITunesImport} options={{ headerShown: false }}></Stack.Screen>
-          <Stack.Screen name="SystemPhoto" component={SystemPhoto} options={{ headerShown: false }}></Stack.Screen>
-        </Stack.Navigator>
-      </Provider>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <StatusBar
+          backgroundColor="transparent"
+          barStyle="light-content"
+          translucent={true}
+        />
+        <Provider store={store}>
+          <Stack.Navigator initialRouteName="PlayerIndex">
+            <Stack.Screen name="PlayerIndex" component={PlayerIndex} options={{ headerShown: false }}></Stack.Screen>
+            <Stack.Screen name="WIFITransfer" component={WIFITransfer} options={{ headerShown: false }}></Stack.Screen>
+            <Stack.Screen name="ITunesImport" component={ITunesImport} options={{ headerShown: false }}></Stack.Screen>
+            <Stack.Screen name="SystemPhoto" component={SystemPhoto} options={{ headerShown: false }}></Stack.Screen>
+          </Stack.Navigator>
+        </Provider>
+      </NavigationContainer>
+    </SafeAreaProvider>
+    
   );
 }
 
