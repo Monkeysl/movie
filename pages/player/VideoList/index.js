@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableWithoutFeedback } from 'react-native';
 import React, { Component } from 'react';
 
 import { NavBar } from '../../../components'
@@ -15,8 +15,8 @@ export default class VideoList extends Component {
 
   static contextType = RouterContext
 
-  _onPress() {
-    this.context.navigation.navigate('ITunesImport')
+  _onPress(routerNm) {
+    this.context.navigation.navigate(routerNm)
   }
 
   componentDidMount() {
@@ -27,21 +27,30 @@ export default class VideoList extends Component {
     return (
       <Container>
         <NavBar title="播放器" subTitle="编辑" isShowBack={true} />
-        <ToolsCon onPress={this._onPress}>
-          <ImageItem
-            source={require('../../../assets/images/ITunes.png')}
-            
-          />
-          <ImageItem source={require('../../../assets/images/wifi.png')}></ImageItem>
+        <ToolsCon>
+          <TouchableWithoutFeedback onPress={() => this._onPress('ITunesImport')}>
+            <ImageItem source={require('../../../assets/images/ITunes.png')} />
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback onPress={() => this._onPress('WIFITransfer')}>
+            <ImageItem source={require('../../../assets/images/wifi.png')}></ImageItem>
+          </TouchableWithoutFeedback>
         </ToolsCon>
 
         <MeiuPicCon>
           <MeiuPicTitle>
-            <PicImage source={require('../../../assets/images/photo.png')} />
-            <Text onPress={this._onPress}>系统相册</Text>
+            <TouchableWithoutFeedback onPress={() => this._onPress('SystemPhoto')}>
+              <View style={styles.sysPhtoto}><PicImage source={require('../../../assets/images/photo.png')} /><Text>系统相册</Text></View>
+            </TouchableWithoutFeedback>
           </MeiuPicTitle>
         </MeiuPicCon>
       </Container>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  sysPhtoto: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  }
+})

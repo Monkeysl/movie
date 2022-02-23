@@ -1,7 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { Component } from 'react'
 
+
 import { NavBar } from '../../../components'
+
+import RouterContext from '../../../context/router'
 
 import {
   Container,
@@ -22,7 +25,7 @@ export default class ITunesImport extends Component {
   render() {
     return (
       <Container>
-        <NavBar title="iTunes导入" subTitle=" " isShowBack={true} />
+        <NavBar title="iTunes导入" subTitle=" " isShowBack={true} backHandler={() => {this.props.navigation.navigate('PlayerIndex')}} />
         <ItemsCon>
           <ITunesItem>1.将iphone和电脑通过usb连接</ITunesItem>
           <ITunesItem>2.打开itunes，在左侧列表顶部选择当前设备，点击左侧界面中的<Text style={styles.blue}>应用程序</Text></ITunesItem>

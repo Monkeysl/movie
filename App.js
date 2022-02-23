@@ -9,7 +9,7 @@ import store from './store'
 import PlayerIndex from './pages/player/Index'  // 播放器
 import FilmsIndex from './pages/films/Index'  // 电影
 
-import ITunesImport from './pages/player/ITunesImport/'  // iTunes导入
+import ITunesImport from './pages/player/ITunesImport'  // iTunes导入
 import SystemPhoto from './pages/player/SystemPhoto/'  // 系统相册
 import WIFITransfer from './pages/player/WIFITransfer/'  // wifi传输
 
@@ -25,10 +25,10 @@ export default function App() {
         translucent={true}
       />
       <Provider store={store}>
-        <Stack.Navigator initialRouteName="WIFITransfer">
-          <Stack.Screen name="WIFITransfer" component={WIFITransfer} options={{ headerShown: false }}></Stack.Screen>
-          <Stack.Screen name="PlayerIndex" component={PlayerIndex} options={{ headerShown: false }}></Stack.Screen>
+        <Stack.Navigator initialRouteName="SystemPhoto">
           <Stack.Screen name="SystemPhoto" component={SystemPhoto} options={{ headerShown: false }}></Stack.Screen>
+          <Stack.Screen name="PlayerIndex" component={PlayerIndex} options={{ headerShown: false }}></Stack.Screen>
+          <Stack.Screen name="WIFITransfer" component={WIFITransfer} options={{ headerShown: false }}></Stack.Screen>
           <Stack.Screen name="ITunesImport" component={ITunesImport} options={{ headerShown: false }}></Stack.Screen>
         </Stack.Navigator>
       </Provider>

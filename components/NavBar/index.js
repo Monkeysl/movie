@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native'
+import { Text, View, TouchableWithoutFeedback } from 'react-native'
 import React, { Component } from 'react'
 import { 
   SafeAreaInsetsContext
@@ -11,16 +11,15 @@ export default class navBar extends Component {
     super(props)
   }
 
-
   render() {
-    const { title, subTitle, subTitleClickHandler, isShowBack, justify, backUrl } = this.props
+    const { title, subTitle, subTitleClickHandler, isShowBack, justify, backHandler } = this.props
     const subTitleCon = () => <SubTitle onPress={subTitleClickHandler}>{subTitle}</SubTitle>
 
     return (
       <SafeAreaInsetsContext.Consumer>
         {(insets) => 
           <Container justify={justify} navBarTop={insets.top}>
-            {!!isShowBack&&<ImageIcon source={require('../../assets/images/back.png')} />}
+            {!!isShowBack&&<TouchableWithoutFeedback onPress={() => backHandler()}><ImageIcon source={require('../../assets/images/back.png')} /></TouchableWithoutFeedback>}
             <MainTitle>{title}</MainTitle>
             {!!subTitle&&subTitleCon()}
           </Container> 
