@@ -25,11 +25,11 @@ export default function App() {
         translucent={true}
       />
       <Provider store={store}>
-        <Stack.Navigator initialRouteName="SystemPhoto">
-          <Stack.Screen name="SystemPhoto" component={SystemPhoto} options={{ headerShown: false }}></Stack.Screen>
+        <Stack.Navigator initialRouteName="PlayerIndex">
           <Stack.Screen name="PlayerIndex" component={PlayerIndex} options={{ headerShown: false }}></Stack.Screen>
           <Stack.Screen name="WIFITransfer" component={WIFITransfer} options={{ headerShown: false }}></Stack.Screen>
           <Stack.Screen name="ITunesImport" component={ITunesImport} options={{ headerShown: false }}></Stack.Screen>
+          <Stack.Screen name="SystemPhoto" component={SystemPhoto} options={{ headerShown: false }}></Stack.Screen>
         </Stack.Navigator>
       </Provider>
     </NavigationContainer>

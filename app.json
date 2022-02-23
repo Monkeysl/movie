@@ -17,7 +17,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "blah.s3.amazonaws.com": {
+            "NSExceptionAllowsInsecureHTTPLoads": true,
+            "NSRequiresCertificateTransparency": false,
+            "NSIncludesSubdomains": true,
+            "NSPhotoLibraryAddUsageDescription": true
+          }
+        }
+      }
     },
     "android": {
       "adaptiveIcon": {

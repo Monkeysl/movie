@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { Component } from 'react'
 import { Button, Modal, Provider } from '@ant-design/react-native';
+import SafeAreaView from 'react-native-safe-area-view'; 
 
 import { NavBar } from '../../../components'
 
 import {
-  Container,
   ItemsCon,
   WIFIItem
 } from './StyledIndex'
@@ -38,7 +38,7 @@ export default class ITunesImport extends Component {
 
   render() {
     return (
-      <Container>
+      <SafeAreaView style={styles.container}>
         <NavBar title="Wi-Fi传输" subTitle="设置端口" subTitleClickHandler={this.subTitleClickHandler} isShowBack={true}  backHandler={() => {this.props.navigation.navigate('PlayerIndex')}} />
         <ItemsCon>
           <WIFIItem>在电脑浏览器上输入以下网址： www.sdhcbdsjcdjs</WIFIItem>
@@ -63,12 +63,17 @@ export default class ITunesImport extends Component {
           </Modal>
         </Provider>
         
-      </Container>
+      </SafeAreaView>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#fff'
+  },
   modalContanier: {
     width: '100%',
     flexDirection: 'column',
