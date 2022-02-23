@@ -13,8 +13,8 @@ export default class navBar extends Component {
 
 
   render() {
-    const { title, subTitle, isShowBack, justify, backUrl } = this.props
-    const subTitleCon = () => <SubTitle>{subTitle}</SubTitle>
+    const { title, subTitle, subTitleClickHandler, isShowBack, justify, backUrl } = this.props
+    const subTitleCon = () => <SubTitle onPress={subTitleClickHandler}>{subTitle}</SubTitle>
 
     return (
       <SafeAreaInsetsContext.Consumer>
