@@ -7,7 +7,7 @@ import { TabBar } from '@ant-design/react-native'
 import SafeAreaView from 'react-native-safe-area-view'; 
 
 // 首页组件
-import Home from '../Login'
+import Home from '../Home'
 import Look from '../Look'
 import My from '../My'
 
