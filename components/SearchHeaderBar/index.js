@@ -36,8 +36,12 @@ export default class SearchHeaderBar extends Component {
 
 const styles = StyleSheet.create({
   SearchBarCon: {
-    margin: '6px 15px 8px',
+    marginLeft: 15,
+    marginRight: 15,
+    marginTop: 6,
+    marginBottom: 8,
     flexDirection: 'row',
+    alignItems: 'center'
 
   },
   searchBarIcon: {
