@@ -20,7 +20,7 @@ import {
 } from './StyledIndex'
 
 @observer
-export default class Index extends Component {
+export default class PlayerIndex extends Component {
   constructor(props) {
     super(props)
     this.state = {

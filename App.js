@@ -10,10 +10,12 @@ import store from './store'
 import PlayerIndex from './pages/player/Index'  // 播放器
 import FilmsIndex from './pages/films/Index'  // 电影
 
+// 播放器
 import ITunesImport from './pages/player/ITunesImport'  // iTunes导入
 import SystemPhoto from './pages/player/SystemPhoto/'  // 系统相册
 import WIFITransfer from './pages/player/WIFITransfer/'  // wifi传输
-
+// 电影
+import Login from './pages/films/Login'
 
 const Stack = createStackNavigator ()
 
@@ -28,10 +30,17 @@ export default function App() {
         />
         <Provider store={store}>
           <Stack.Navigator initialRouteName="PlayerIndex">
+            {/* 影视 */}
+            <Stack.Screen name="FilmsIndex" component={FilmsIndex} options={{ headerShown: false }}></Stack.Screen>
+            <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}></Stack.Screen>
+            <Stack.Screen name="ITunesImport" component={ITunesImport} options={{ headerShown: false }}></Stack.Screen>
+            <Stack.Screen name="SystemPhoto" component={SystemPhoto} options={{ headerShown: false }}></Stack.Screen>
+            {/* 播放器 */}
             <Stack.Screen name="PlayerIndex" component={PlayerIndex} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="WIFITransfer" component={WIFITransfer} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="ITunesImport" component={ITunesImport} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="SystemPhoto" component={SystemPhoto} options={{ headerShown: false }}></Stack.Screen>
+            
           </Stack.Navigator>
         </Provider>
       </NavigationContainer>

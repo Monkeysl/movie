@@ -1,12 +1,20 @@
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import React, { Component } from 'react';
+import SafeAreaView from 'react-native-safe-area-view'; 
 
-export default class gf extends Component {
+
+export default class FilmsIndex extends Component {
   render() {
     return (
-      <View>
+      <SafeAreaView>
         <Text>b </Text>
-      </View>
+      </SafeAreaView>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  FilmsIndexCon: {
+
+  }
+})
