@@ -29,12 +29,11 @@ export default function App() {
           translucent={true}
         />
         <Provider store={store}>
-          <Stack.Navigator initialRouteName="PlayerIndex">
+          <Stack.Navigator initialRouteName="FilmsIndex">
             {/* 影视 */}
             <Stack.Screen name="FilmsIndex" component={FilmsIndex} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}></Stack.Screen>
-            <Stack.Screen name="ITunesImport" component={ITunesImport} options={{ headerShown: false }}></Stack.Screen>
-            <Stack.Screen name="SystemPhoto" component={SystemPhoto} options={{ headerShown: false }}></Stack.Screen>
+          
             {/* 播放器 */}
             <Stack.Screen name="PlayerIndex" component={PlayerIndex} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="WIFITransfer" component={WIFITransfer} options={{ headerShown: false }}></Stack.Screen>
