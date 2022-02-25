@@ -4,6 +4,7 @@ import SafeAreaView from 'react-native-safe-area-view';
 import { Tabs } from '@ant-design/react-native'
 
 import { SearchHeaderBar } from '../../../components'
+import Swiper from './Swiper'
 
 export default class Home extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ export default class Home extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <SearchHeaderBar isSHowSearchBar={true} />
-        <View style={styles.tabsCon}>
+        <View style={styles.tabsContainer}>
           <Tabs
             tabs={tabs}
             renderTabBar={(tabProps) => (
@@ -45,7 +46,7 @@ export default class Home extends Component {
                     key={tab.key || i}
                     style={{
                       // width: '30%',
-                      padding: 6,
+                      padding: 10,
                     }}
                     onPress={() => {
                       const { goToTab, onTabClick } = tabProps
@@ -66,7 +67,11 @@ export default class Home extends Component {
               </View>
             )}>
             <View style={styles.tabCon}>
-              <Text>Content of First Tab</Text>
+              <Swiper />
+              <View style={styles.notice}>
+                <Image style={styles.noticeIcon} source={require('../../../assets/images/notice.png')} />
+                <Text style={styles.noticeText}>最新通知咨询都在这里了</Text>
+              </View>
             </View>
             <View style={styles.tabCon}>
               <Text>Content of Second Tab</Text>
@@ -93,12 +98,23 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#fff'
   },
-  tabsCon: {
-    height: 44,
+  tabsContainer: {
+    flex: 1,
     backgroundColor: '#1b1b1b',
   },
   tabCon: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+  },
+
+  notice: {
+    width: 12,
+    height: 15,
+  },
+  noticeIcon: {
+
+  },
+  noticeText: {
+    
   }
 });

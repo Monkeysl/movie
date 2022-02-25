@@ -13,9 +13,9 @@ const label1 = [
 const label2 = [
   {title: '分享给好友', icon: require('../../../assets/images/share.png')},
   {title: '鼓励开发者', icon: require('../../../assets/images/encourage.png')},
-  {title: '版本信息', icon: require('../../../assets/images/version.png')},
-  {title: '清除缓存', icon: require('../../../assets/images/ClearCache.png')},
-  {title: '退出登录', icon: require('../../../assets/images/exit.png')}
+  {title: '版本信息', subTitle: '已是最新版本', icon: require('../../../assets/images/version.png')},
+  {title: '清除缓存', subTitle: '47.9M', icon: require('../../../assets/images/ClearCache.png')},
+  {title: '退出登录', subTitle: ' ', icon: require('../../../assets/images/exit.png')}
 
 ]
 
@@ -31,14 +31,10 @@ export default class my extends Component {
           <Text style={{marginLeft: 15, fontSize: 18}}>登录 注册</Text>
         </View>
         <View style={styles.whiteBg1}>
-          {
-            label1.map(item => (<MySectionTitle title={item.title} icon={item.icon} />))
-          }
+          {label1.map((item, index) => (<MySectionTitle title={item.title} icon={item.icon} />))}
         </View>
         <View style={styles.whiteBg2}>
-          {
-            label2.map(item => (<MySectionTitle title={item.title} icon={item.icon} />))
-          }
+          {label2.map((item, index) => (<MySectionTitle title={item.title} icon={item.icon} subTitle={item.subTitle} />))}
         </View>
       </SafeAreaView>
     )
@@ -48,6 +44,7 @@ export default class my extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     backgroundColor: '#eee',
   },
   loginHeaderCon: {
@@ -67,5 +64,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginTop: 5,
     paddingTop: 16,
+    height: 165,
+  },
+  whiteBg2: {
+    marginTop: 10,
+    backgroundColor: '#fff',
+    flex: 1
   } 
 })

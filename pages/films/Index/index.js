@@ -19,7 +19,7 @@ export default class FilmsIndex extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedTab: 'my',
+      selectedTab: 'home',
     }
     this.navigation = this.props.navigation
   }
