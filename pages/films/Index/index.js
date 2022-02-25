@@ -47,14 +47,6 @@ export default class FilmsIndex extends Component {
             <Home />
           </TabBar.Item>
           <TabBar.Item
-            title="发现"
-            icon={<ImageIcon source={require('../../../assets/images/home.png')} />}
-            selectedIcon={<ImageIcon source={require('../../../assets/images/looka.png')} />}
-            selected={this.state.selectedTab === 'look'}
-            onPress={() => this.onChangeTab('look')}>
-            <Look />
-          </TabBar.Item>
-          <TabBar.Item
             icon={<ImageIcon source={require('../../../assets/images/my.png')} />}
             selectedIcon={<ImageIcon source={require('../../../assets/images/mya.png')} />}
             title="我的"
