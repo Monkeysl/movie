@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React, { Component } from 'react'
 import SafeAreaView from 'react-native-safe-area-view'; 
 import { Tabs } from '@ant-design/react-native'
