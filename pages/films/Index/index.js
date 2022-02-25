@@ -8,7 +8,6 @@ import SafeAreaView from 'react-native-safe-area-view';
 
 // 首页组件
 import Home from '../Home'
-import Look from '../Look'
 import My from '../My'
 
 // 图标样式
