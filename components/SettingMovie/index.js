@@ -48,7 +48,7 @@ export default class SettingMovie extends Component {
 
         <ScrollView>
           {
-            [{checked: false},{checked: true},{checked: false},{checked: false},{checked: false},{checked: false},{checked: false},{checked: false},{checked: false}].map((item, index) => (
+            [{checked: false, downloaded: 1},{checked: true, downloaded: 0},{checked: false, downloaded: 0},{checked: false, downloaded: 0},{checked: false, downloaded: 1},{checked: false, downloaded: 1},{checked: false, downloaded: 0},{checked: false, downloaded: 0},{checked: false, downloaded: 0}].map((item, index) => (
               <View style={styles.movieItem} key={index}>
                 {isEdit && <SetCheck checked={item.checked} /> }
                 <View style={styles.movieItemRt}>
@@ -59,7 +59,7 @@ export default class SettingMovie extends Component {
                     <View>
                       <View style={styles.movieInfo}>
                         <Text style={styles.movieTile}>影视名称</Text>
-                        {type == 'download' && <Text>正在下载80%</Text>}
+                        {type == 'download' && <Text style={{ fontSize: 12, color: item.downloaded ? '#777878' : '#ff7403'}}>正在下载80%</Text>}
                       </View>
                       <Text style={styles.font12Gray}>电影： 2021</Text>
                     </View>
@@ -127,6 +127,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4
   },
   movieRt: {
+    flex: 1,
     paddingLeft: 20,
     flexDirection: 'column',
     justifyContent: 'space-between'
@@ -137,5 +138,8 @@ const styles = StyleSheet.create({
   },
   movieTile: {
     marginBottom: 8
+  },
+  downloadTitle: {
+    fontSize: 12
   }
 })
