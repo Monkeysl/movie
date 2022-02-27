@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, ScrollView } from 'react-native'
 import React, { Component } from 'react'
 import SafeAreaView from 'react-native-safe-area-view'; 
 import { Tabs } from '@ant-design/react-native'
@@ -6,9 +6,17 @@ import { Tabs } from '@ant-design/react-native'
 import { SearchHeaderBar } from '../../../components'
 import Swiper from './Swiper'
 
+import RouterContext from '../../../context/router'
 export default class Home extends Component {
   constructor(props) {
     super(props)
+    this._onPress = this._onPress.bind(this)
+  }
+
+  static contextType = RouterContext
+
+  _onPress(routerNm) {
+    this.context.navigation.navigate(routerNm)
   }
 
   render() {
@@ -27,7 +35,7 @@ export default class Home extends Component {
     }
     return (
       <SafeAreaView style={styles.container}>
-        <SearchHeaderBar isSHowSearchBar={true} />
+        <SearchHeaderBar isSHowSearchBar={true} clickHandler={()=> { this._onPress('Search') } } />
         <View style={styles.tabsContainer}>
           <Tabs
             tabs={tabs}
@@ -66,7 +74,7 @@ export default class Home extends Component {
                 ))}
               </View>
             )}>
-            <View style={styles.tabCon}>
+            <ScrollView style={styles.tabCon}>
               <Swiper />
               <View style={styles.notice}>
                 <Image style={styles.noticeIcon} source={require('../../../assets/images/notice.png')} />
@@ -82,14 +90,30 @@ export default class Home extends Component {
                   <View><Text style={{ color: '#777878', fontSize: 12 }}>共200部&gt;</Text></View>
                 </View>
 
-                <View style={styles.newHotListCon}>
-                  <View styles={styles.newHotItem}>
-                    <View style={styles.movieCon}>
-                      <ImageBackground style={{ width: 110, height: 150 }} source={require('../../../assets/images/earth.jpg')}>
-                        <Text>更新至12集</Text>
-                      </ImageBackground>
-                    </View>
-                    <Text>电影名称</Text>
+                <View style={styles.filmsListCon}>
+                  <View styles={styles.filmsItem}>
+                    <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
+                      <Text style={styles.set}>更新至12集</Text>
+                    </ImageBackground>
+                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                  </View>
+                  <View styles={styles.filmsItem}>
+                    <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
+                      <Text style={styles.set}>更新至12集</Text>
+                    </ImageBackground>
+                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                  </View>
+                  <View styles={styles.filmsItem}>
+                    <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
+                      <Text style={styles.set}>更新至12集</Text>
+                    </ImageBackground>
+                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称电影名称</Text>
+                  </View>
+                  <View styles={styles.filmsItem}>
+                    <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/earth.jpg')}>
+                      <Text style={styles.set} >更新至12集</Text>
+                    </ImageBackground>
+                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
                   </View>
                 </View>
               </View>
@@ -97,19 +121,119 @@ export default class Home extends Component {
 
               </View>
 
-            </View>
-            <View style={styles.tabCon}>
-              <Text>Content of Second Tab</Text>
-            </View>
-            <View style={styles.tabCon}>
-              <Text>Content of Third Tab</Text>
-            </View>
-            <View style={styles.tabCon}>
-              <Text>Content of Second Tab</Text>
-            </View>
-            <View style={styles.tabCon}>
-              <Text>Content of Third Tab</Text>
-            </View>
+            </ScrollView>
+            <ScrollView style={styles.tabCon}>
+              <View style={styles.filmsListCon}>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
+                    <Text style={styles.set}>更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                </View>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
+                    <Text style={styles.set}>更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                </View>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
+                    <Text style={styles.set}>更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称电影名称</Text>
+                </View>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/earth.jpg')}>
+                    <Text style={styles.set} >更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                </View>
+              </View>
+            </ScrollView>
+            <ScrollView style={styles.tabCon}>
+              <View style={styles.filmsListCon}>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
+                    <Text style={styles.set}>更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                </View>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
+                    <Text style={styles.set}>更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                </View>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
+                    <Text style={styles.set}>更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称电影名称</Text>
+                </View>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/earth.jpg')}>
+                    <Text style={styles.set} >更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                </View>
+              </View>
+            </ScrollView>
+            <ScrollView style={styles.tabCon}>
+              <View style={styles.filmsListCon}>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
+                    <Text style={styles.set}>更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                </View>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
+                    <Text style={styles.set}>更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                </View>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
+                    <Text style={styles.set}>更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称电影名称</Text>
+                </View>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/earth.jpg')}>
+                    <Text style={styles.set} >更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                </View>
+              </View>
+            </ScrollView>
+            <ScrollView style={styles.tabCon}>
+              <View style={styles.filmsListCon}>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
+                    <Text style={styles.set}>更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                </View>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
+                    <Text style={styles.set}>更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                </View>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
+                    <Text style={styles.set}>更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称电影名称</Text>
+                </View>
+                <View styles={styles.filmsItem}>
+                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/earth.jpg')}>
+                    <Text style={styles.set} >更新至12集</Text>
+                  </ImageBackground>
+                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                </View>
+              </View>
+            </ScrollView>
           </Tabs>
         </View>
       </SafeAreaView>
@@ -159,27 +283,36 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 15,
     paddingTop: 20,
+    paddingBottom: 10
   },
-  newHotListCon: {
-    paddingHorizontal: 7,
+  filmsListCon: {
+    paddingHorizontal: 10,
+    flexDirection: 'row',
+    flexWrap: 'wrap'
   },
-  newHotItem: {
-    marginHorizontal: 8,
+  filmsItem: {
+    width: 110,
   },
-  movieCon: {
-    position: 'relative',
-    borderRadius: 15,
-    overflow: 'hidden',
+  filmsImage: {
     width: 110,
     height: 150,
+    marginHorizontal: 4,
+    marginTop: 7,
+    backgroundColor: 'transparent',
+    justifyContent: 'flex-end',
+    borderRadius: 8,
+    overflow: 'hidden'
   },
-  moiveInfo: {
-    zIndex: 1,
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    width: '100%',
-    height: 21,
-    backgroundColor: 'rgba(0,0,0,.3)'
+  set: {
+    lineHeight: 21,
+    backgroundColor: 'rgba(0,0,0,.2)',
+    textAlign: 'right',
+    color: '#fff',
+    fontSize: 12,
+    paddingHorizontal: 4
+  },
+  filmsTitle: {
+    fontSize: 14,
+    lineHeight: 33
   }
 });

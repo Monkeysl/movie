@@ -4,8 +4,10 @@ import SafeAreaView from 'react-native-safe-area-view';
 
 import { MySectionTitle } from '../../../components'
 
+import RouterContext from '../../../context/router'
+
 const label1 = [
-  {title: '观看历史', icon: require('../../../assets/images/history.png')},
+  {title: '观看历史', icon: require('../../../assets/images/history.png'), RouterNm: 'WatchHistory'},
   {title: '我的收藏', icon: require('../../../assets/images/collection.png')},
   {title: '我的下载', icon: require('../../../assets/images/download.png')}
 
@@ -20,6 +22,18 @@ const label2 = [
 ]
 
 export default class my extends Component {
+  constructor(props) {
+    super(props)
+    this._onPress = this._onPress.bind(this)
+
+  }
+
+  static contextType = RouterContext
+
+  _onPress(routerNm) {
+    this.context.navigation.navigate(routerNm)
+  }
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -31,10 +45,10 @@ export default class my extends Component {
           <Text style={{marginLeft: 15, fontSize: 18}}>登录 注册</Text>
         </View>
         <View style={styles.whiteBg1}>
-          {label1.map((item, index) => (<MySectionTitle title={item.title} icon={item.icon} />))}
+          {label1.map((item, index) => (<MySectionTitle key={index} title={item.title} icon={item.icon} clickHandler={() => { item.RouterNm && this._onPress(item.RouterNm) }} />))}
         </View>
         <View style={styles.whiteBg2}>
-          {label2.map((item, index) => (<MySectionTitle title={item.title} icon={item.icon} subTitle={item.subTitle} />))}
+          {label2.map((item, index) => (<MySectionTitle key={index} title={item.title} icon={item.icon} subTitle={item.subTitle} clickHandler={() => { item.RouterNm && this._onPress(item.RouterNm) }} />))}
         </View>
       </SafeAreaView>
     )

@@ -1,9 +1,8 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableWithoutFeedback } from 'react-native'
 import React, { Component } from 'react'
 import { 
   SafeAreaInsetsContext
 } from 'react-native-safe-area-context';
-import { Tabs } from '@ant-design/react-native'
 
 import { Container, SubTitle, ImageIcon, MainTitle } from './StyledIndex';
 
@@ -13,21 +12,15 @@ export default class SearchHeaderBar extends Component {
   }
 
   render() {
-    const tabs = [
-      { title: '热门' },
-      { title: '电影' },
-      { title: '电视剧' },
-      { title: '动漫' },
-      { title: '综艺' },
-    ]
-
-    const { title, justify, isSHowSearchBar } = this.props
+    const { title, justify, isSHowSearchBar, clickHandler } = this.props
 
     const SearchBar = (props) => (
-      <View style={styles.SearchBarCon}>
-        <Image style={styles.searchBarIcon} source={require('../../assets/images/searchBar.png')} />
-        <Image style={styles.shareIcon} source={require('../../assets/images/shareWhite.png')} />
-      </View>
+      <TouchableWithoutFeedback onPress={() => clickHandler()}>
+        <View style={styles.SearchBarCon}>
+          <Image style={styles.searchBarIcon} source={require('../../assets/images/searchBar.png')} />
+          <Image style={styles.shareIcon} source={require('../../assets/images/shareWhite.png')} />
+        </View>
+      </TouchableWithoutFeedback>
     )
 
     const style = {
