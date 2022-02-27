@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 
 import { SettingMovie } from '../../../components/'
 
-export default class WatchHistory extends Component {
+export default class Favorite extends Component {
   constructor(props) {
     super(props)
     this._onPress = this._onPress.bind(this)
@@ -16,7 +16,7 @@ export default class WatchHistory extends Component {
 
   render() {
     return (
-      <SettingMovie title="观看历史" subTitle="编辑" backHandler={() => { this._onPress('FilmsIndex') }}></SettingMovie>
+      <SettingMovie title="我的收藏" subTitle="编辑" backHandler={() => { this._onPress('FilmsIndex') }}></SettingMovie>
     )
   }
 }

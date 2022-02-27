@@ -1,9 +1,9 @@
 import { Text, View } from 'react-native'
 import React, { Component } from 'react'
 
-import { SettingMovie } from '../../../components/'
+import { SettingMovie } from '../../../components'
 
-export default class WatchHistory extends Component {
+export default class Download extends Component {
   constructor(props) {
     super(props)
     this._onPress = this._onPress.bind(this)
@@ -16,7 +16,7 @@ export default class WatchHistory extends Component {
 
   render() {
     return (
-      <SettingMovie title="观看历史" subTitle="编辑" backHandler={() => { this._onPress('FilmsIndex') }}></SettingMovie>
+      <SettingMovie title="我的下载" subTitle="编辑" type="download" backHandler={() => { this._onPress('FilmsIndex') }}></SettingMovie>
     )
   }
 }

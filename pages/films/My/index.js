@@ -8,8 +8,8 @@ import RouterContext from '../../../context/router'
 
 const label1 = [
   {title: '观看历史', icon: require('../../../assets/images/history.png'), RouterNm: 'WatchHistory'},
-  {title: '我的收藏', icon: require('../../../assets/images/collection.png')},
-  {title: '我的下载', icon: require('../../../assets/images/download.png')}
+  {title: '我的收藏', icon: require('../../../assets/images/collection.png'), RouterNm: 'Favorite'},
+  {title: '我的下载', icon: require('../../../assets/images/download.png'), RouterNm: 'Download' }
 
 ]
 const label2 = [

@@ -18,6 +18,8 @@ import WIFITransfer from './pages/player/WIFITransfer/'  // wifi传输
 import Login from './pages/films/Login'
 import Search from './pages/films/Search'
 import WatchHistory from './pages/films/WatchHistory'
+import Favorite from './pages/films/Favorite'
+import Download from './pages/films/Download'
 
 const Stack = createStackNavigator ()
 
@@ -37,6 +39,8 @@ export default function App() {
             <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="Search" component={Search} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="WatchHistory" component={WatchHistory} options={{ headerShown: false }}></Stack.Screen>
+            <Stack.Screen name="Favorite" component={Favorite} options={{ headerShown: false }}></Stack.Screen>
+            <Stack.Screen name="Download" component={Download} options={{ headerShown: false }}></Stack.Screen>
           
             {/* 播放器 */}
             <Stack.Screen name="PlayerIndex" component={PlayerIndex} options={{ headerShown: false }}></Stack.Screen>
