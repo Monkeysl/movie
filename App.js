@@ -33,10 +33,10 @@ export default function App() {
           translucent={true}
         />
         <Provider store={store}>
-          <Stack.Navigator initialRouteName="Login">
+          <Stack.Navigator initialRouteName="FilmsIndex">
             {/* 影视 */}
-            <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="FilmsIndex" component={FilmsIndex} options={{ headerShown: false }}></Stack.Screen>
+            <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="Search" component={Search} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="WatchHistory" component={WatchHistory} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="Favorite" component={Favorite} options={{ headerShown: false }}></Stack.Screen>

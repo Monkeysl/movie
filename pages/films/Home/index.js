@@ -92,7 +92,55 @@ export default class Home extends Component {
 
                 <View style={styles.filmsListCon}>
                   {
-                    [{},{},{},{}].map(item => (
+                    [{},{},{},{},{},{}].map(item => (
+                      <View styles={styles.filmsItem}>
+                        <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
+                          <Text style={styles.set}>更新至12集</Text>
+                        </ImageBackground>
+                        <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                      </View>
+                    ))
+
+                  }
+                </View>
+              </View>
+              <View style={styles.newHotContainer}>
+                <View style={styles.newHotTitle}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <Image style={{ width:22, height: 22 }} source={require('../../../assets/images/hot.png')} />
+                    <Text style={{ fontSize: 15 }}>最新热门</Text>
+                    <Image style={{ width: 12, height: 15 }} source={require('../../../assets/images/flame.png')} />
+                  </View>
+                  <View><Text style={{ color: '#777878', fontSize: 12 }}>共200部&gt;</Text></View>
+                </View>
+
+                <View style={styles.filmsListCon}>
+                  {
+                    [{},{},{},{},{},{}].map(item => (
+                      <View styles={styles.filmsItem}>
+                        <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
+                          <Text style={styles.set}>更新至12集</Text>
+                        </ImageBackground>
+                        <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                      </View>
+                    ))
+
+                  }
+                </View>
+              </View>
+              <View style={styles.newHotContainer}>
+                <View style={styles.newHotTitle}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <Image style={{ width:22, height: 22 }} source={require('../../../assets/images/hot.png')} />
+                    <Text style={{ fontSize: 15 }}>最新热门</Text>
+                    <Image style={{ width: 12, height: 15 }} source={require('../../../assets/images/flame.png')} />
+                  </View>
+                  <View><Text style={{ color: '#777878', fontSize: 12 }}>共200部&gt;</Text></View>
+                </View>
+
+                <View style={styles.filmsListCon}>
+                  {
+                    [{},{},{},{},{},{}].map(item => (
                       <View styles={styles.filmsItem}>
                         <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
                           <Text style={styles.set}>更新至12集</Text>
