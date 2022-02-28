@@ -17,7 +17,7 @@ export default class FilmsSectionTitle extends Component {
           <Text style={{fontSize: 14, marginLeft: 12}}>{title}</Text>
         </View>
 
-        <TouchableWithoutFeedback onPress={() => { clickHandler() }}>
+        <TouchableWithoutFeedback onPress={() => { clickHandler('FilmsIndex') }}>
           <View style={styles.RightTileCon}>
             {subTitle&&<Text style={styles.subTitle}>{subTitle}</Text>}
             {!subTitle&&<Image style={styles.titleIcon} source={require('../../assets/images/nextRect.png')} />}

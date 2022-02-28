@@ -52,7 +52,7 @@ export default class SettingMovie extends Component {
               <View style={styles.movieItem} key={index}>
                 {isEdit && <SetCheck checked={item.checked} /> }
                 <View style={styles.movieItemRt}>
-                  <ImageBackground style={styles.movieImage} source={require('../../assets/images/earth.jpg')}>
+                  <ImageBackground style={styles.movieImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
                     <Text style={styles.set}>观看至12集</Text>
                   </ImageBackground>
                   <View style={styles.movieRt}>

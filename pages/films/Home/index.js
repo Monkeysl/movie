@@ -91,30 +91,17 @@ export default class Home extends Component {
                 </View>
 
                 <View style={styles.filmsListCon}>
-                  <View styles={styles.filmsItem}>
-                    <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
-                      <Text style={styles.set}>更新至12集</Text>
-                    </ImageBackground>
-                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                  </View>
-                  <View styles={styles.filmsItem}>
-                    <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
-                      <Text style={styles.set}>更新至12集</Text>
-                    </ImageBackground>
-                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                  </View>
-                  <View styles={styles.filmsItem}>
-                    <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
-                      <Text style={styles.set}>更新至12集</Text>
-                    </ImageBackground>
-                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称电影名称</Text>
-                  </View>
-                  <View styles={styles.filmsItem}>
-                    <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/earth.jpg')}>
-                      <Text style={styles.set} >更新至12集</Text>
-                    </ImageBackground>
-                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                  </View>
+                  {
+                    [{},{},{},{}].map(item => (
+                      <View styles={styles.filmsItem}>
+                        <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
+                          <Text style={styles.set}>更新至12集</Text>
+                        </ImageBackground>
+                        <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                      </View>
+                    ))
+
+                  }
                 </View>
               </View>
               <View>
@@ -124,114 +111,58 @@ export default class Home extends Component {
             </ScrollView>
             <ScrollView style={styles.tabCon}>
               <View style={styles.filmsListCon}>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
-                    <Text style={styles.set}>更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                </View>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
-                    <Text style={styles.set}>更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                </View>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
-                    <Text style={styles.set}>更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称电影名称</Text>
-                </View>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/earth.jpg')}>
-                    <Text style={styles.set} >更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                </View>
+              {
+                [{},{},{},{}].map(item => (
+                  <View styles={styles.filmsItem}>
+                    <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
+                      <Text style={styles.set}>更新至12集</Text>
+                    </ImageBackground>
+                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                  </View>
+                ))
+              }
               </View>
             </ScrollView>
             <ScrollView style={styles.tabCon}>
               <View style={styles.filmsListCon}>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
-                    <Text style={styles.set}>更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                </View>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
-                    <Text style={styles.set}>更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                </View>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
-                    <Text style={styles.set}>更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称电影名称</Text>
-                </View>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/earth.jpg')}>
-                    <Text style={styles.set} >更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                </View>
+              {
+                [{},{},{},{}].map(item => (
+                  <View styles={styles.filmsItem}>
+                    <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
+                      <Text style={styles.set}>更新至12集</Text>
+                    </ImageBackground>
+                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                  </View>
+                ))
+              }
               </View>
             </ScrollView>
             <ScrollView style={styles.tabCon}>
               <View style={styles.filmsListCon}>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
-                    <Text style={styles.set}>更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                </View>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
-                    <Text style={styles.set}>更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                </View>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
-                    <Text style={styles.set}>更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称电影名称</Text>
-                </View>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/earth.jpg')}>
-                    <Text style={styles.set} >更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                </View>
+              {
+                [{},{},{},{}].map(item => (
+                  <View styles={styles.filmsItem}>
+                    <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
+                      <Text style={styles.set}>更新至12集</Text>
+                    </ImageBackground>
+                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                  </View>
+                ))
+              }
               </View>
             </ScrollView>
             <ScrollView style={styles.tabCon}>
               <View style={styles.filmsListCon}>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
-                    <Text style={styles.set}>更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                </View>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
-                    <Text style={styles.set}>更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                </View>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/avatar.png')}>
-                    <Text style={styles.set}>更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称电影名称</Text>
-                </View>
-                <View styles={styles.filmsItem}>
-                  <ImageBackground style={styles.filmsImage} source={require('../../../assets/images/earth.jpg')}>
-                    <Text style={styles.set} >更新至12集</Text>
-                  </ImageBackground>
-                  <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                </View>
+              {
+                [{},{},{},{}].map(item => (
+                  <View styles={styles.filmsItem}>
+                    <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
+                      <Text style={styles.set}>更新至12集</Text>
+                    </ImageBackground>
+                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                  </View>
+                ))
+              }
               </View>
             </ScrollView>
           </Tabs>
