@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, ScrollView, TouchableWithoutFeedback } from 'react-native'
 import React, { Component } from 'react'
 import SafeAreaView from 'react-native-safe-area-view'; 
 import { Tabs } from '@ant-design/react-native'
@@ -92,13 +92,16 @@ export default class Home extends Component {
 
                 <View style={styles.filmsListCon}>
                   {
-                    [{},{},{},{},{},{}].map(item => (
-                      <View styles={styles.filmsItem}>
-                        <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
-                          <Text style={styles.set}>更新至12集</Text>
-                        </ImageBackground>
-                        <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                      </View>
+                    [{},{},{},{},{},{}].map((item, index) => (
+                      <TouchableWithoutFeedback onPress={() => { this._onPress('MoviewDetail') }} key={index}>
+                        <View styles={styles.filmsItem}>
+                          <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
+                            <Text style={styles.set}>更新至12集</Text>
+                          </ImageBackground>
+                          <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                        </View>
+                      </TouchableWithoutFeedback>
+                      
                     ))
 
                   }
@@ -116,13 +119,15 @@ export default class Home extends Component {
 
                 <View style={styles.filmsListCon}>
                   {
-                    [{},{},{},{},{},{}].map(item => (
-                      <View styles={styles.filmsItem}>
-                        <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
-                          <Text style={styles.set}>更新至12集</Text>
-                        </ImageBackground>
-                        <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                      </View>
+                    [{},{},{},{},{},{}].map((item, index) => (
+                      <TouchableWithoutFeedback onPress={() => { this._onPress('MoviewDetail') }} key={index}>
+                        <View styles={styles.filmsItem}>
+                          <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
+                            <Text style={styles.set}>更新至12集</Text>
+                          </ImageBackground>
+                          <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                        </View>
+                      </TouchableWithoutFeedback>
                     ))
 
                   }
@@ -140,13 +145,15 @@ export default class Home extends Component {
 
                 <View style={styles.filmsListCon}>
                   {
-                    [{},{},{},{},{},{}].map(item => (
-                      <View styles={styles.filmsItem}>
-                        <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
-                          <Text style={styles.set}>更新至12集</Text>
-                        </ImageBackground>
-                        <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                      </View>
+                    [{},{},{},{},{},{}].map((item, index) => (
+                      <TouchableWithoutFeedback onPress={() => { this._onPress('MoviewDetail') }} key={index}>
+                        <View styles={styles.filmsItem}>
+                          <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
+                            <Text style={styles.set}>更新至12集</Text>
+                          </ImageBackground>
+                          <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                        </View>
+                      </TouchableWithoutFeedback>
                     ))
 
                   }
@@ -160,13 +167,15 @@ export default class Home extends Component {
             <ScrollView style={styles.tabCon}>
               <View style={styles.filmsListCon}>
               {
-                [{},{},{},{}].map(item => (
-                  <View styles={styles.filmsItem}>
-                    <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
-                      <Text style={styles.set}>更新至12集</Text>
-                    </ImageBackground>
-                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                  </View>
+                [{},{},{},{}].map((item, index) => (
+                  <TouchableWithoutFeedback onPress={() => { this._onPress('MoviewDetail') }} key={index}>
+                    <View styles={styles.filmsItem}>
+                      <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
+                        <Text style={styles.set}>更新至12集</Text>
+                      </ImageBackground>
+                      <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                    </View>
+                  </TouchableWithoutFeedback>
                 ))
               }
               </View>
@@ -174,13 +183,15 @@ export default class Home extends Component {
             <ScrollView style={styles.tabCon}>
               <View style={styles.filmsListCon}>
               {
-                [{},{},{},{}].map(item => (
-                  <View styles={styles.filmsItem}>
-                    <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
-                      <Text style={styles.set}>更新至12集</Text>
-                    </ImageBackground>
-                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                  </View>
+                [{},{},{},{}].map((item, index) => (
+                  <TouchableWithoutFeedback onPress={() => { this._onPress('MoviewDetail') }} key={index}>
+                    <View styles={styles.filmsItem}>
+                      <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
+                        <Text style={styles.set}>更新至12集</Text>
+                      </ImageBackground>
+                      <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                    </View>
+                  </TouchableWithoutFeedback>
                 ))
               }
               </View>
@@ -188,13 +199,15 @@ export default class Home extends Component {
             <ScrollView style={styles.tabCon}>
               <View style={styles.filmsListCon}>
               {
-                [{},{},{},{}].map(item => (
-                  <View styles={styles.filmsItem}>
-                    <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
-                      <Text style={styles.set}>更新至12集</Text>
-                    </ImageBackground>
-                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                  </View>
+                [{},{},{},{}].map((item, index) => (
+                  <TouchableWithoutFeedback onPress={() => { this._onPress('MoviewDetail') }} key={index}>
+                    <View styles={styles.filmsItem}>
+                      <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
+                        <Text style={styles.set}>更新至12集</Text>
+                      </ImageBackground>
+                      <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                    </View>
+                  </TouchableWithoutFeedback>
                 ))
               }
               </View>
@@ -202,13 +215,15 @@ export default class Home extends Component {
             <ScrollView style={styles.tabCon}>
               <View style={styles.filmsListCon}>
               {
-                [{},{},{},{}].map(item => (
-                  <View styles={styles.filmsItem}>
-                    <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
-                      <Text style={styles.set}>更新至12集</Text>
-                    </ImageBackground>
-                    <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
-                  </View>
+                [{},{},{},{}].map((item, index) => (
+                  <TouchableWithoutFeedback onPress={() => { this._onPress('MoviewDetail') }} key={index}>
+                    <View styles={styles.filmsItem}>
+                      <ImageBackground style={styles.filmsImage} source={{ uri: 'https://iph.href.lu/110x150?text=CMYS&fg=999999&bg=cccccc'}}>
+                        <Text style={styles.set}>更新至12集</Text>
+                      </ImageBackground>
+                      <Text style={styles.filmsTitle} numberOfLines={1}>电影名称</Text>
+                    </View>
+                  </TouchableWithoutFeedback>
                 ))
               }
               </View>

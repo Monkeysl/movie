@@ -20,6 +20,7 @@ import Search from './pages/films/Search'
 import WatchHistory from './pages/films/WatchHistory'
 import Favorite from './pages/films/Favorite'
 import Download from './pages/films/Download'
+import MoviewDetail from './pages/films/MoviewDetail'
 
 const Stack = createStackNavigator ()
 
@@ -33,8 +34,9 @@ export default function App() {
           translucent={true}
         />
         <Provider store={store}>
-          <Stack.Navigator initialRouteName="FilmsIndex">
+          <Stack.Navigator initialRouteName="MoviewDetail">
             {/* 影视 */}
+            <Stack.Screen name="MoviewDetail" component={MoviewDetail} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="FilmsIndex" component={FilmsIndex} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="Search" component={Search} options={{ headerShown: false }}></Stack.Screen>
