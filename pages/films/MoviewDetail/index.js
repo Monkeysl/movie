@@ -1,12 +1,22 @@
-import { Text, View, TouchableWithoutFeedback } from 'react-native'
+import { StyleSheet, Text, View, TouchableWithoutFeedback, StatusBar } from 'react-native'
 import React, { Component } from 'react'
+import SafeAreaView from 'react-native-safe-area-view'; 
 
 export default class MoviewDetail extends Component {
   render() {
     return (
-      <View>
-        <Text>MoviewDetail</Text>
-      </View>
+      <SafeAreaView style={styles.container}>
+        <StatusBar
+          barStyle="light-content"
+        />
+        <Text>light-content</Text>
+      </SafeAreaView>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  }
+})
