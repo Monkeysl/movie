@@ -7,12 +7,17 @@ export default class MoviewDetail extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <Text>MoviewDetail</Text>
+        <StatusBar
+          barStyle="light-content"
+        />
+        <Text>light-content</Text>
       </SafeAreaView>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  
+  container: {
+    flex: 1,
+  }
 })
