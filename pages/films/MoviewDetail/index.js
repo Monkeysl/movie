@@ -25,41 +25,48 @@ export default class MoviewDetail extends Component {
     const { screenFlag, videowidth, videoheight } = this.state
     return (
       <>
+        { screenFlag!=1&&<StatusBar hidden={true}/>}
+        <SafeAreaInsetsContext.Consumer>
+          {(insets) => (
+            <View style={{ width: '100%', height: insets.top, backgroundColor: '#000', top: -insets.top }}></View>
+          )} 
+        </SafeAreaInsetsContext.Consumer>
         <SafeAreaView style={styles.container}>
-          {/* { screenFlag!=1&&<StatusBar hidden={true}/>} */}
-          <SafeAreaInsetsContext.Consumer>
-            {(insets) => (
-              <View style={{ width: '100%', height: insets.top, backgroundColor: '#000', top: -insets.top }}></View>
-            )} 
-          </SafeAreaInsetsContext.Consumer>
-          <VideoPlayer
-            inFullscreen={true}
-            videoProps={{
-              shouldPlay: true,
-              resizeMode: Video.RESIZE_MODE_CONTAIN,
-              source: {
-                uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
-              },
-            }}
-            width= {videowidth}
-            height= {videoheight}
-            
-            switchToPortrait={()=>{
-                if(screenFlag==1){
-                    ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT)
-                    setscreenFlag(0)
-                    setvideowidth(Dimensions.get('window').height)
-                    setvideoheight(Dimensions.get('window').width)
-                }else{
-                    ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP)
-                    setscreenFlag(1)
-                    setvideowidth(width)
-                    setvideoheight(width*9/10-1)
-                    //console.log(videowidth+","+videoheight)
-                }
-                
-            }}
-          />
+          <View>
+            <VideoPlayer
+              inFullscreen={true}
+              videoProps={{
+                shouldPlay: true,
+                resizeMode: Video.RESIZE_MODE_CONTAIN,
+                source: {
+                  uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
+                },
+              }}
+              width= {videowidth}
+              height= {videoheight}
+              
+              switchToPortrait={()=>{
+                  if(screenFlag==1){
+                      ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT)
+                      this.setState({
+                        screenFlag: 0,
+                        videowidth: Dimensions.get('window').height,
+                        videoheight: Dimensions.get('window').width
+                      })
+                  }else{
+                      ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP)
+                      this.setState({
+                        screenFlag: 1,
+                        videowidth: width,
+                        videoheight: width*9/10-1
+                      })
+                      //console.log(videowidth+","+videoheight)
+                  }
+                  
+              }}
+            />
+          </View>
+          
         </SafeAreaView>
       </>
     )
