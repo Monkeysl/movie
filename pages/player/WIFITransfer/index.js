@@ -54,8 +54,8 @@ export default class ITunesImport extends Component {
             <View style={styles.modalContanier}>
               <View style={styles.titleContainer}><Text style={styles.title}>请选择端口</Text></View>
               <View style={styles.btnContainer}>
-                <Button type="primary" style={{marginTop: 18}}>使用80端口</Button>
-                <Button type="ghost" style={{marginTop: 6}}>使用其他端口</Button>
+                <Button onPress={this.onClose} type="primary" style={{marginTop: 18}}>使用80端口</Button>
+                <Button onPress={this.onClose} type="ghost" style={{marginTop: 6}}>使用其他端口</Button>
                 <Text onPress={this.onClose} style={styles.textBtn}>取消</Text>
               </View>
               

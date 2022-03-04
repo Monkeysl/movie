@@ -23,19 +23,19 @@ export default class SystemPhoto extends Component {
 
   componentDidMount () {
     var _that = this
-    // var  promise = CameraRoll.getPhotos(fetchParams)
-    // promise.then( (data) => {
-    //         var  edges = data.edges;
-    //         var  photos = [];
-    //         for  ( var  i  in  edges) {
-    //             photos.push(edges[i].node.image.uri);
-    //         }
-    //         _that.setState({
-    //             photos:photos
-    //         });
-    // }, function (err){
-    //     alert( '获取照片失败！' );
-    // });
+    var  promise = CameraRoll.getPhotos(fetchParams)
+    promise.then( (data) => {
+            var  edges = data.edges;
+            var  photos = [];
+            for  ( var  i  in  edges) {
+                photos.push(edges[i].node.image.uri);
+            }
+            _that.setState({
+                photos:photos
+            });
+    }, function (err){
+        alert( '获取照片失败！' );
+    });
   }
 
   render() {

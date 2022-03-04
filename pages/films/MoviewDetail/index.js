@@ -25,13 +25,13 @@ export default class MoviewDetail extends Component {
     const { screenFlag, videowidth, videoheight } = this.state
     return (
       <>
-        { screenFlag!=1&&<StatusBar hidden={true}/>}
+        {/* { screenFlag!=1&&<StatusBar hidden={true}/>}
         <SafeAreaInsetsContext.Consumer>
           {(insets) => (
             <View style={{ width: '100%', height: insets.top, backgroundColor: '#000', top: -insets.top }}></View>
           )} 
         </SafeAreaInsetsContext.Consumer>
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.container}> */}
           <View>
             <VideoPlayer
               inFullscreen={true}
@@ -67,7 +67,7 @@ export default class MoviewDetail extends Component {
             />
           </View>
           
-        </SafeAreaView>
+        {/* </SafeAreaView> */}
       </>
     )
   }
