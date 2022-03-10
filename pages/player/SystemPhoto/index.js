@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, Button } from 'react-native'
 import CameraRoll from '@react-native-community/cameraroll'
+import * as ImagePicker from 'expo-image-picker'
 import React, { Component } from 'react'
 import SafeAreaView from 'react-native-safe-area-view'; 
 
@@ -17,30 +18,35 @@ export default class SystemPhoto extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      photos: null
+      image: null
+    }
+    this.pickImage = this.pickImage.bind(this)
+  }
+
+  async pickImage() {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    console.log(result);
+
+    if (!result.cancelled) {
+      this.setState({
+        image: result.uri
+      }) 
     }
   }
 
   componentDidMount () {
-    var _that = this
-    var  promise = CameraRoll.getPhotos(fetchParams)
-    promise.then( (data) => {
-            var  edges = data.edges;
-            var  photos = [];
-            for  ( var  i  in  edges) {
-                photos.push(edges[i].node.image.uri);
-            }
-            _that.setState({
-                photos:photos
-            });
-    }, function (err){
-        alert( '获取照片失败！' );
-    });
+    // this.pickImage()
   }
 
   render() {
-    var  photos =  this .state.photos || [];
-    var  photosView = [];
+    // var  photos =  this .state.photos || [];
+    // var  photosView = [];
     // for ( var  i = 0; i < 6 ; i += 2){
     //   photosView.push(
     //     <View key={i} style={styles.row}>
@@ -54,10 +60,14 @@ export default class SystemPhoto extends Component {
     //   )
     // }
 
+    const { image } = this.state
     return (
       <SafeAreaView style={styles.container}>
         <NavBar title="系统相册" subTitle=" " subTitleClickHandler={this.subTitleClickHandler} isShowBack={true}  backHandler={() => {this.props.navigation.navigate('PlayerIndex')}} />
-        {photosView}
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <Button title="Pick an image from camera roll" onPress={this.pickImage} />
+          {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+        </View>
       </SafeAreaView>
     )
   }
