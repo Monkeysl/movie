@@ -34,7 +34,7 @@ export default function App() {
           translucent={true}
         />
         <Provider store={store}>
-          <Stack.Navigator initialRouteName="PlayerIndex">
+          <Stack.Navigator initialRouteName="MoviewDetail">
             
             {/* 播放器 */}
             <Stack.Screen name="PlayerIndex" component={PlayerIndex} options={{ headerShown: false }}></Stack.Screen>
