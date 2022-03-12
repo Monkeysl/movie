@@ -19,6 +19,20 @@ export default class Home extends Component {
     this.context.navigation.navigate(routerNm)
   }
 
+  async componentDidMount() {
+    // await fetch('http://39.104.62.152:8000/ad/rotationImg', {method: 'POST'})
+    //   .then(response => {
+    //     alert(response)
+    //   })
+      
+    let result = await fetch('https://baidu.com')
+      .then(response => response.json())
+      .then(result => {
+        return result.value
+      })
+    alert(result)
+  }
+
   render() {
     const tabs = [
       { title: '热门' },

@@ -23,7 +23,7 @@ export default class MoviewDetail extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      inFullscreen: 1,
+      inFullscreen: false,
       videowidth: Dimensions.get("window").width,
       videoheight: (Dimensions.get("window").width * 9) / 10,
       showDesc: false,
@@ -105,14 +105,14 @@ export default class MoviewDetail extends Component {
                 inFullscreen: inFullscreen,
                 enterFullscreen: async () => {
                   setStatusBarHidden(true, "fade");
-                  this.setState({ inFullscreen: !inFullscreen });
+                  this.setState({ ...this.state, inFullscreen: !inFullscreen });
                   await ScreenOrientation.lockAsync(
                     ScreenOrientation.OrientationLock.LANDSCAPE_LEFT
                   );
                 },
                 exitFullscreen: async () => {
                   setStatusBarHidden(false, "fade");
-                  this.setState({ inFullscreen: !inFullscreen });
+                  this.setState({ ...this.state, inFullscreen: !inFullscreen });
                   await ScreenOrientation.lockAsync(
                     ScreenOrientation.OrientationLock.PORTRAIT_UP
                   );

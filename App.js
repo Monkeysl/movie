@@ -34,7 +34,7 @@ export default function App() {
           translucent={true}
         />
         <Provider store={store}>
-          <Stack.Navigator initialRouteName="MoviewDetail">
+          <Stack.Navigator initialRouteName="FilmsIndex">
             
             {/* 播放器 */}
             <Stack.Screen name="PlayerIndex" component={PlayerIndex} options={{ headerShown: false }}></Stack.Screen>
@@ -42,8 +42,8 @@ export default function App() {
             <Stack.Screen name="ITunesImport" component={ITunesImport} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="SystemPhoto" component={SystemPhoto} options={{ headerShown: false }}></Stack.Screen>
             {/* 影视 */}
-            <Stack.Screen name="MoviewDetail" component={MoviewDetail} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="FilmsIndex" component={FilmsIndex} options={{ headerShown: false }}></Stack.Screen>
+            <Stack.Screen name="MoviewDetail" component={MoviewDetail} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="Search" component={Search} options={{ headerShown: false }}></Stack.Screen>
             <Stack.Screen name="WatchHistory" component={WatchHistory} options={{ headerShown: false }}></Stack.Screen>
