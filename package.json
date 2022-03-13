@@ -23,6 +23,7 @@
     "expo-image-picker": "~12.0.2",
     "expo-screen-orientation": "^4.1.2",
     "expo-status-bar": "~1.2.0",
+    "expo-updates": "~0.11.6",
     "expo-video-player": "^2.0.4",
     "global": "^4.4.0",
     "mobx": "^6.4.1",

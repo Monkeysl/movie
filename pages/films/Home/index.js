@@ -104,7 +104,7 @@ export default class Home extends Component {
       .finally(() => {
         
       })
-    // alert(result, 'result')
+    alert(result, 'result')
   }
 
   render() {
