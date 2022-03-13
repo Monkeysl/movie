@@ -199,7 +199,9 @@ export default class Home extends Component {
               <View style={styles.newHotContainer}>
                 <View style={styles.newHotTitle}>
                   <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ fontSize: 15 }}>电影</Text>
+                  <Image style={{ width:22, height: 22 }} source={require('../../../assets/images/hot.png')} />
+                    <Text style={{ fontSize: 15 }}>热门电影</Text>
+                    <Image style={{ width: 12, height: 15 }} source={require('../../../assets/images/flame.png')} />
                   </View>
                   <Text style={{ color: '#777878', fontSize: 12 }}>共200部&gt;</Text>
                 </View>
@@ -223,7 +225,9 @@ export default class Home extends Component {
               <View style={styles.newHotContainer}>
                 <View style={styles.newHotTitle}>
                   <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ fontSize: 15 }}>电视剧</Text>
+                    <Image style={{ width:22, height: 22 }} source={require('../../../assets/images/hot.png')} />
+                    <Text style={{ fontSize: 15 }}>热门电视剧</Text>
+                    <Image style={{ width: 12, height: 15 }} source={require('../../../assets/images/flame.png')} />
                   </View>
                   <Text style={{ color: '#777878', fontSize: 12 }}>共200部&gt;</Text>
                 </View>
@@ -247,7 +251,9 @@ export default class Home extends Component {
               <View style={styles.newHotContainer}>
                 <View style={styles.newHotTitle}>
                   <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ fontSize: 15 }}>动漫</Text>
+                    <Image style={{ width:22, height: 22 }} source={require('../../../assets/images/hot.png')} />
+                    <Text style={{ fontSize: 15 }}>热门动漫</Text>
+                    <Image style={{ width: 12, height: 15 }} source={require('../../../assets/images/flame.png')} />
                   </View>
                   <Text style={{ color: '#777878', fontSize: 12 }}>共200部&gt;</Text>
                 </View>
@@ -271,7 +277,9 @@ export default class Home extends Component {
               <View style={styles.newHotContainer}>
                 <View style={styles.newHotTitle}>
                   <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ fontSize: 15 }}>综艺</Text>
+                    <Image style={{ width:22, height: 22 }} source={require('../../../assets/images/hot.png')} />
+                    <Text style={{ fontSize: 15 }}>热门综艺</Text>
+                    <Image style={{ width: 12, height: 15 }} source={require('../../../assets/images/flame.png')} />
                   </View>
                   <Text style={{ color: '#777878', fontSize: 12 }}>共200部&gt;</Text>
                 </View>
@@ -406,6 +414,7 @@ const styles = StyleSheet.create({
   newHotTitle: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     paddingHorizontal: 15,
     paddingTop: 20,
     paddingBottom: 10
