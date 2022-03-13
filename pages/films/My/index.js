@@ -42,7 +42,7 @@ export default class my extends Component {
         />
         <View style={styles.loginHeaderCon}>
           <Image style={styles.avatars} source={require('../../../assets/images/avatar.png')} />
-          <Text style={{marginLeft: 15, fontSize: 18}} onPress={() => { this._onPress('Login') }}>登录 注册</Text>
+          <Text style={{marginLeft: 15, fontSize: 18}} onPress={() => { if(false) this._onPress('Login') }}>登录 注册</Text>
         </View>
         <View style={styles.whiteBg1}>
           {label1.map((item, index) => (<MySectionTitle key={index} title={item.title} icon={item.icon} clickHandler={() => { item.RouterNm && this._onPress(item.RouterNm) }} />))}
