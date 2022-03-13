@@ -27,38 +27,21 @@ export default class MoviewDetail extends Component {
       videowidth: Dimensions.get("window").width,
       videoheight: (Dimensions.get("window").width * 9) / 10,
       showDesc: false,
-      showSelections: true,
+      showSelections: false,
       anthology: [1,2,3,4,5,6,7,8]
     }
     this._onPress = this._onPress.bind(this)
-    this.setShowDesc = this.setShowDesc.bind(this)
-    this.setShowSelections = this.setShowSelections.bind(this)
-    this.reverseAnthology = this.reverseAnthology.bind(this)
-    
+    this._setState = this._setState.bind(this)    
   }
 
   _onPress(routerNm) {
     this.props.navigation.navigate(routerNm)
   }
 
-  setShowDesc(bool) {
+  _setState(object) {
     this.setState({
-      ...this.state,
-      showDesc: bool
-    })
-  }
-
-  setShowSelections(bool) {
-    this.setState({
-      ...this.state,
-      showSelections: bool
-    })
-  }
-
-  reverseAnthology() {
-    this.setState({
-      ...this.state,
-      anthology: this.state.anthology.reverse()
+      ...this.setState,
+      ...object
     })
   }
 
@@ -133,7 +116,7 @@ export default class MoviewDetail extends Component {
 
                   <View style={styles.titleDesc}>
                     <Text style={{ fontSize: 15 }}>简介</Text>
-                    <TouchableWithoutFeedback onPress={() => { this.setShowDesc(false) }}><ImageIcon source={require('../../../assets/images/close.png')} /></TouchableWithoutFeedback>
+                    <TouchableWithoutFeedback onPress={() => { this._setState({showDesc: false}) }}><ImageIcon source={require('../../../assets/images/close.png')} /></TouchableWithoutFeedback>
                   </View>
                   <View style={styles.mainDesc}>
                     <Text style={styles.mainDescRow}>主演：某某某 某某某</Text>
@@ -156,8 +139,8 @@ export default class MoviewDetail extends Component {
                 <View style={styles.titleSelections}>
                   <Text style={{ fontSize: 15 }}>选集</Text>
                   <View style={{ flexDirection: "row" }}>
-                    <TouchableWithoutFeedback onPress={this.reverseAnthology}><ImageIcon source={require('../../../assets/images/sort.png')} /></TouchableWithoutFeedback>
-                    <TouchableWithoutFeedback onPress={() => { this.setShowSelections(false) }}><ImageIcon style={{ marginLeft: 20 }} source={require('../../../assets/images/close.png')} /></TouchableWithoutFeedback>
+                    <TouchableWithoutFeedback onPress={() => { this._setState({anthology: this.state.anthology.reverse()}) }}><ImageIcon source={require('../../../assets/images/sort.png')} /></TouchableWithoutFeedback>
+                    <TouchableWithoutFeedback onPress={() => { this._setState({showSelections: false}) }}><ImageIcon style={{ marginLeft: 20 }} source={require('../../../assets/images/close.png')} /></TouchableWithoutFeedback>
                   </View>
                 </View>
                 <View style={styles.contentSelection}>
@@ -172,7 +155,7 @@ export default class MoviewDetail extends Component {
                 <View style={styles.title}>
                   <Text style={{ fontSize: 15 }}>萌宠果酱</Text>
                   <View style={styles.desc}>
-                    <Text style={{ fontSize: 12, color: '#ff6959' }}>9.0</Text><Text style={{ fontSize: 12 }}>·大陆</Text><Text style={{ fontSize: 12, color: '#777878',marginLeft: 15 }} onPress={() => { this.setShowDesc(true) }}>简介&gt;</Text>
+                    <Text style={{ fontSize: 12, color: '#ff6959' }}>9.0</Text><Text style={{ fontSize: 12 }}>·大陆</Text><Text style={{ fontSize: 12, color: '#777878',marginLeft: 15 }} onPress={() => { this._setState({showDesc: true}) }}>简介&gt;</Text>
                   </View>
                 </View>
                 {/* 标题end */}
@@ -181,7 +164,7 @@ export default class MoviewDetail extends Component {
                 <View style={styles.play}>
                   <View style={styles.playTitle}>
                     <Text style={{fontSize: 15}}>缓存线路（共36集）</Text>
-                    <Text onPress={() => { this.setShowSelections(true) }} style={styles.selections}>选集</Text>
+                    <Text onPress={() => { this._setState({showSelections: true}) }} style={styles.selections}>选集</Text>
                   </View>
                   <View style={styles.scollNumber}>
                     <Text style={styles.number}>1</Text>
@@ -189,7 +172,7 @@ export default class MoviewDetail extends Component {
 
                   <View style={styles.playTitle}>
                     <Text style={{fontSize: 15}}>超清qq（共36集）</Text>
-                    <Text onPress={() => { this.setShowSelections(true) }} style={styles.selections}>选集</Text>
+                    <Text onPress={() => { this._setState({showSelections: true}) }} style={styles.selections}>选集</Text>
                   </View>
                   <View style={styles.scollNumber}>
                     { [1,2,3,4,5,6,7,8,9,10].map(item => (<Text key={item} style={styles.number}>{item}</Text>)) }
