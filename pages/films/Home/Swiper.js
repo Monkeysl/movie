@@ -25,7 +25,7 @@ const Swiper = (props) => {
         infinite
         afterChange={onHorizontalSelectedIndexChange}
       >
-        { listData.map((item, index) => <TouchableWithoutFeedback key={index} onPress={() => { chlickHandler(item) }}><Image source={{uri: item.image}} style={[styles.containerHorizontal]} /></TouchableWithoutFeedback>) }
+        { listData.map((item, index) => <TouchableWithoutFeedback key={index} onPress={() => {((_item) => { chlickHandler(_item) })(item)}}><Image source={{uri: item.image}} style={[styles.containerHorizontal]} /></TouchableWithoutFeedback>) }
       </Carousel>
     </View>
   )

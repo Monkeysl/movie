@@ -1,6 +1,6 @@
-import { useLocalStore } from 'mobx-react-lite'
+import { useLocalObservable } from 'mobx-react-lite'
 
-const store = useLocalState(() => ({
+const store = useLocalObservable(() => ({
   count: 10
 }))
 

@@ -45,7 +45,12 @@ export default class MoviewDetail extends Component {
     })
   }
 
+  componentDidMount() {
+    // alert(this.props.route.params.name)
+  }
+
   render() {
+    const { mainstar, director, area, year, name, introduction } = this.props.route.params
     const { videowidth, videoheight, inFullscreen, showDesc, showSelections, anthology } = this.state;
     return (
       <>
@@ -119,15 +124,15 @@ export default class MoviewDetail extends Component {
                     <TouchableWithoutFeedback onPress={() => { this._setState({showDesc: false}) }}><ImageIcon source={require('../../../assets/images/close.png')} /></TouchableWithoutFeedback>
                   </View>
                   <View style={styles.mainDesc}>
-                    <Text style={styles.mainDescRow}>主演：某某某 某某某</Text>
-                    <Text style={styles.mainDescRow}>导演：徐峥</Text>
-                    <Text style={styles.mainDescRow}>地区：合适的v和</Text>
-                    <Text style={styles.mainDescRow}>年代：2018</Text>
+                    <Text style={styles.mainDescRow}>{mainstar}</Text>
+                    <Text style={styles.mainDescRow}>{director}</Text>
+                    <Text style={styles.mainDescRow}>地区：{area}</Text>
+                    <Text style={styles.mainDescRow}>年代：{year}</Text>
                   </View>
 
                   <View style={styles.plotDesc}>
                     <Text style={styles.plotTitle}>剧情介绍</Text>
-                    <Text style={styles.plotDetail}>电影，是由活动照相术和幻灯放映术结合发展起来的一种连续的影像画面，是一门视觉和听觉的现代艺术，也是一门可以容纳戏剧、摄影、绘画、动画、音乐、舞蹈、文字、雕塑、建筑等多种艺术的现代科技与艺术的综合体。电影是一种视觉艺术，用于模拟通过录制或...</Text>
+                    <Text style={styles.plotDetail}>{introduction&&introduction.slice(3)}</Text>
                   </View>
                 </View>
                 {/* 介绍end */}
@@ -153,7 +158,7 @@ export default class MoviewDetail extends Component {
               <View>
                 {/* 标题start */}
                 <View style={styles.title}>
-                  <Text style={{ fontSize: 15 }}>萌宠果酱</Text>
+                  <Text style={{ fontSize: 15 }}>{name}</Text>
                   <View style={styles.desc}>
                     <Text style={{ fontSize: 12, color: '#ff6959' }}>9.0</Text><Text style={{ fontSize: 12 }}>·大陆</Text><Text style={{ fontSize: 12, color: '#777878',marginLeft: 15 }} onPress={() => { this._setState({showDesc: true}) }}>简介&gt;</Text>
                   </View>
@@ -261,8 +266,10 @@ const styles = StyleSheet.create({
   },
   descCon: {
     paddingHorizontal: 16,
+    paddingBottom: 20,
     backgroundColor: "#fff",
-    minHeight: "100%"
+    minHeight: "100%",
+    width: "100%"
   },
   titleDesc: {
     flexDirection: "row",

@@ -6,7 +6,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import store from './store'
+import store from './store/store'
 import PlayerIndex from './pages/player/Index'  // 播放器
 import FilmsIndex from './pages/films/Index'  // 电影
 

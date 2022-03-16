@@ -1,10 +1,13 @@
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, ScrollView, TouchableWithoutFeedback } from 'react-native'
 import React, { Component } from 'react'
+// import { useObserver } from 'mobx-react-lite';
 import SafeAreaView from 'react-native-safe-area-view'; 
 import { Tabs } from '@ant-design/react-native'
 
 import { SearchHeaderBar } from '../../../components'
 import Swiper from './Swiper'
+
+// import store from '../../../store/movieStore'
 
 import RouterContext from '../../../context/router'
 export default class Home extends Component {
@@ -95,8 +98,15 @@ export default class Home extends Component {
           ]
       }
     ]})
-    let result = await fetch('http://39.104.62.152:8000/ad/rotationImg', {method: 'POST'})
-      .then(response => response.json())
+    let formdata = new FormData()
+    formdata.append('action', 'r_i')
+    let result = await fetch('http://39.104.62.152:8000/ad/rotationImg',{
+      method: 'POST',
+      headers: {
+        'Content-Type':'application/x-www-form-urlencoded'
+      },
+      body: formdata
+    }).then(response => { alert(response);return response.json()})
       .then(result => {
         return result
       })
@@ -164,7 +174,7 @@ export default class Home extends Component {
               </View>
             )}>
             <ScrollView style={styles.tabCon}>
-              <Swiper listData={swiperList} chlickHandler={(detail) => {this._onPress('MoviewDetail',detail)}} />
+              <Swiper listData={swiperList} chlickHandler={(detail) => { this._onPress('MoviewDetail',detail) }} />
               <View style={styles.notice}>
                 <Image style={styles.noticeIcon} source={require('../../../assets/images/notice.png')} />
                 <Text style={styles.noticeText}>最新通知咨询都在这里了</Text>
