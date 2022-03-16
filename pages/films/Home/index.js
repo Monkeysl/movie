@@ -100,21 +100,22 @@ export default class Home extends Component {
     ]})
     let formdata = new FormData()
     formdata.append('action', 'r_i')
-    let result = await fetch('http://39.104.62.152:8000/ad/rotationImg',{
+    let result = await fetch('http://39.104.62.152:8000/ad/rotationImg/',{
       method: 'POST',
       headers: {
         'Content-Type':'application/x-www-form-urlencoded'
       },
       body: formdata
-    }).then(response => { alert(response);return response.json()})
-      .then(result => {
-        return result
-      })
-      .catch(err => { console.log(err) })
-      .finally(() => {
-        
-      })
-    alert(result, 'result')
+    })
+    .then(response => response.json())
+    .then(result => {
+      return result
+    })
+    .catch(err => { console.log(err) })
+    .finally(() => {
+      
+    })
+    alert(result)
   }
 
   render() {
