@@ -82,6 +82,7 @@ export default class MoviewDetail extends Component {
                 resizeMode: Video.RESIZE_MODE_CONTAIN,
                 source: {
                   uri: "http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+                  ovrrideFileExtensionAndroid:"m3u8"
                 },
               }}
               style={{
