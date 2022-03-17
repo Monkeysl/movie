@@ -50,7 +50,7 @@ export default class MoviewDetail extends Component {
   }
 
   render() {
-    const { mainstar, director, area, year, name, introduction } = this.props.route.params
+    const { mainstar, director, area, year, name, introduction, urls } = this.props.route.params
     const { videowidth, videoheight, inFullscreen, showDesc, showSelections, anthology } = this.state;
     return (
       <>
@@ -81,7 +81,7 @@ export default class MoviewDetail extends Component {
                 shouldPlay: true,
                 resizeMode: Video.RESIZE_MODE_CONTAIN,
                 source: {
-                  uri: "http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+                  uri: urls[0].playurl,
                   ovrrideFileExtensionAndroid:"m3u8"
                 },
               }}
