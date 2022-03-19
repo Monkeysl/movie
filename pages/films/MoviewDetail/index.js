@@ -51,7 +51,6 @@ export default class MoviewDetail extends Component {
   render() {
     const { mainstar, director, area, year, name, introduction, urls } = this.props.route.params
     const { videowidth, videoheight, inFullscreen, showDesc, showSelections, anthology } = this.state;
-    alert(urls[0]&&urls[0].playurl)
     return (
       <>
         {/* { screenFlag!=1&&<StatusBar hidden={true}/>} */}
