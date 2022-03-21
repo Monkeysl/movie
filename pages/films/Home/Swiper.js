@@ -5,7 +5,7 @@ import { Carousel } from '@ant-design/react-native'
 
 
 const Swiper = (props) => {
-  const { listData, chlickHandler } = props
+  const { listData=[], chlickHandler } = props
 
   const onHorizontalSelectedIndexChange = () => {}
 
@@ -15,19 +15,17 @@ const Swiper = (props) => {
   }, [])
 
   return (
-    <View>
-      <Carousel
-        style={styles.wrapper}
-        dotStyle={{ width: 5, height: 5,  }}
-        dotActiveStyle={{ backgroundColor: '#ff7403' }}
-        selectedIndex={2}
-        autoplay
-        infinite
-        afterChange={onHorizontalSelectedIndexChange}
-      >
-        { listData.map((item, index) => <TouchableWithoutFeedback key={index} onPress={() => {((_item) => { chlickHandler(_item) })(item)}}><Image source={{uri: item.image}} style={[styles.containerHorizontal]} /></TouchableWithoutFeedback>) }
-      </Carousel>
-    </View>
+    <Carousel
+      style={styles.wrapper}
+      dotStyle={{ width: 5, height: 5,  }}
+      dotActiveStyle={{ backgroundColor: '#ff7403' }}
+      selectedIndex={2}
+      autoplay
+      infinite
+      afterChange={onHorizontalSelectedIndexChange}
+    >
+      { listData.map((item, index) => <TouchableWithoutFeedback key={index} onPress={() => {((_item) => { chlickHandler(_item) })(item)}}><Image source={{uri: item.image}} style={[styles.containerHorizontal]} /></TouchableWithoutFeedback>) }
+    </Carousel>
   )
 }
 

@@ -6,6 +6,9 @@ import { Tabs } from '@ant-design/react-native'
 
 import { SearchHeaderBar } from '../../../components'
 import Swiper from './Swiper'
+import Notice from './Notice'
+
+import { post } from '../../../utils/http'
 
 // import store from '../../../store/movieStore'
 
@@ -15,7 +18,7 @@ export default class Home extends Component {
     super(props)
     this.state = {
       swiperList: [],
-
+      noticeList: []
     }
 
     this._onPress = this._onPress.bind(this)
@@ -36,29 +39,14 @@ export default class Home extends Component {
   }
 
   async componentDidMount() {
-    let formdata = new FormData()
-    formdata.append('action', 'r_i')
-    let result = await fetch('http://39.104.62.152:8000/ad/rotationImg/',{
-      method: 'POST',
-      headers: {
-        'Content-Type':'application/x-www-form-urlencoded'
-      },
-      body: formdata
-    })
-    .then(response => response.json())
-    .then(result => {
-      return result
-    })
-    .catch(err => { console.log(err) })
-    .finally(() => {
-      
-    })
-    this._setState({swiperList: result.data})
+    let result = await post('http://39.104.62.152:8000/ad/rotationImg/',{ action: 'r_i' })
+    let result1 = await post('http://39.104.62.152:8000/ad/rotationAnnoce/',{ action: 'r_a' })
+    this._setState({swiperList: result, noticeList: result1})
     
   }
 
   render() {
-    const { swiperList } = this.state
+    const { swiperList, noticeList } = this.state
     const tabs = [
       { title: '热门' },
       { title: '电影' },
@@ -115,10 +103,7 @@ export default class Home extends Component {
             )}>
             <ScrollView style={styles.tabCon}>
               <Swiper listData={swiperList} chlickHandler={(detail) => { this._onPress('MoviewDetail',detail) }} />
-              <View style={styles.notice}>
-                <Image style={styles.noticeIcon} source={require('../../../assets/images/notice.png')} />
-                <Text style={styles.noticeText}>最新通知咨询都在这里了</Text>
-              </View>
+              <Notice listData={noticeList} chlickHandler={(detail) => { return;this._onPress('MoviewDetail',detail) }} />
               <View style={styles.newHotContainer}>
                 <View style={styles.newHotTitle}>
                   <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -339,25 +324,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 
-  notice: {
-    flexDirection: 'row',
-    paddingHorizontal: 19,
-    paddingTop: 7,
-    paddingBottom: 7,
-    alignItems: 'center',
-    backgroundColor: '#eee'
-    // justifyContent: 'space-between'
-  },
-  noticeIcon: {
-    width: 12,
-    height: 15,
-
-  },
-  noticeText: {
-    color: '#0e050a',
-    fontSize: 12,
-    marginLeft: 6
-  },
   newHotContainer: {
 
   },
