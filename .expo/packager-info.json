@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19000,
-  "expoServerNgrokUrl": "https://tu-5i2.wangsl.movie.exp.direct",
-  "packagerNgrokUrl": "https://tu-5i2.wangsl.movie.exp.direct",
-  "ngrokPid": 32780,
+  "expoServerNgrokUrl": "https://m9-xd7.wangsl.movie.exp.direct",
+  "packagerNgrokUrl": "https://m9-xd7.wangsl.movie.exp.direct",
+  "ngrokPid": 49848,
   "packagerPid": null,
   "webpackServerPort": null
 }

@@ -40,7 +40,8 @@ export default class Home extends Component {
 
   async componentDidMount() {
     let result = await post('http://39.104.62.152:8000/ad/rotationImg/',{ action: 'r_i' })
-    let result1 = await post('http://39.104.62.152:8000/ad/rotationAnnoce/',{ action: 'r_a' })
+    let result1
+    //  = await post('http://39.104.62.152:8000/ad/rotationAnnoce/',{ action: 'r_a' })
     this._setState({swiperList: result, noticeList: result1})
     
   }
