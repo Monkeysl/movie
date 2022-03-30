@@ -13,15 +13,14 @@ export default class navBar extends Component {
 
   render() {
     const { title, subTitle, subTitleClickHandler, isShowBack, justify, backHandler } = this.props
-    const subTitleCon = () => <SubTitle onPress={subTitleClickHandler}>{subTitle}</SubTitle>
 
     return (
       <SafeAreaInsetsContext.Consumer>
         {(insets) => 
           <Container justify={justify} navBarTop={insets.top}>
-            {!!isShowBack&&<TouchableWithoutFeedback onPress={() => backHandler()}><ImageIcon source={require('../../assets/images/back.png')} /></TouchableWithoutFeedback>}
+            <TouchableWithoutFeedback onPress={() => backHandler&&backHandler()}><View>{!!isShowBack&&<ImageIcon source={require('../../assets/images/back.png')} />}</View></TouchableWithoutFeedback>
             <MainTitle>{title}</MainTitle>
-            {!!subTitle&&subTitleCon()}
+            <SubTitle onPress={() => subTitleClickHandler&&subTitleClickHandler()}>{subTitle}</SubTitle>
           </Container> 
         }
       </SafeAreaInsetsContext.Consumer>

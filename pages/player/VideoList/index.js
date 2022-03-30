@@ -26,7 +26,7 @@ export default class VideoList extends Component {
   render() {
     return (
       <Container>
-        <NavBar title="播放器" subTitle="编辑" isShowBack={true} />
+        <NavBar title="播放器" />
         <ToolsCon>
           <TouchableWithoutFeedback onPress={() => this._onPress('ITunesImport')}>
             <ImageItem source={require('../../../assets/images/ITunes.png')} />

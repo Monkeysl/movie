@@ -9,7 +9,7 @@ export default class Browser extends Component {
   render() {
     return (
       <Container>
-        <NavBar title="浏览器" justify="center" />
+        <NavBar title="浏览器" />
         <SearchMovieCon>
           <MovieImage source={require('../../../assets/images/movie.png')}></MovieImage>
           <SearchCon>

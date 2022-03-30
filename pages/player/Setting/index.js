@@ -9,7 +9,7 @@ export default class Setting extends Component {
   render() {
     return (
       <Container>
-        <NavBar title="设置" justify="center" />
+        <NavBar title="设置" />
         <SettingCon>
           <SectionTitle title="设置" />
           <SectionTitle title="给个好评" />

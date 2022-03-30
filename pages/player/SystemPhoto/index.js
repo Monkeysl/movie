@@ -63,7 +63,7 @@ export default class SystemPhoto extends Component {
     const { image } = this.state
     return (
       <SafeAreaView style={styles.container}>
-        <NavBar title="系统相册" subTitle=" " subTitleClickHandler={this.subTitleClickHandler} isShowBack={true}  backHandler={() => {this.props.navigation.navigate('PlayerIndex')}} />
+        <NavBar title="系统相册" isShowBack={true}  backHandler={() => {this.props.navigation.navigate('PlayerIndex')}} />
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Button title="Pick an image from camera roll" onPress={this.pickImage} />
           {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
